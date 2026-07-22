@@ -1,0 +1,201 @@
+{
+  "id": "80tal",
+  "name": "80-talet",
+  "description": "Internationella hits från 1980-talet.",
+  "questions": [
+    {
+      "id": "80tal-001",
+      "type": "year",
+      "song": {
+        "title": "Billie Jean",
+        "artist": "Michael Jackson",
+        "year": 1983
+      },
+      "prompt": "Vilket år släpptes Michael Jacksons \"Billie Jean\"?",
+      "answer": "1983",
+      "options": [
+        "1981",
+        "1983",
+        "1985",
+        "1987"
+      ],
+      "fact": "Låten från albumet \"Thriller\" blev en av 80-talets mest spelade.",
+      "difficulty": 2
+    },
+    {
+      "id": "80tal-002",
+      "type": "year",
+      "song": {
+        "title": "Africa",
+        "artist": "Toto",
+        "year": 1982
+      },
+      "prompt": "Vilket år släpptes Totos \"Africa\"?",
+      "answer": "1982",
+      "options": [
+        "1980",
+        "1982",
+        "1984",
+        "1986"
+      ],
+      "fact": "Har fått ett enormt andra liv som meme och coverfavorit.",
+      "difficulty": 2
+    },
+    {
+      "id": "80tal-003",
+      "type": "year",
+      "song": {
+        "title": "Like a Virgin",
+        "artist": "Madonna",
+        "year": 1984
+      },
+      "prompt": "Vilket år släpptes Madonnas \"Like a Virgin\"?",
+      "answer": "1984",
+      "options": [
+        "1982",
+        "1984",
+        "1986",
+        "1988"
+      ],
+      "fact": "Titelspåret på Madonnas genombrottsalbum.",
+      "difficulty": 2
+    },
+    {
+      "id": "80tal-004",
+      "type": "which_artist",
+      "song": {
+        "title": "Every Breath You Take",
+        "artist": "The Police",
+        "year": 1983
+      },
+      "prompt": "Vilket band ligger bakom \"Every Breath You Take\"?",
+      "answer": "The Police",
+      "options": [
+        "The Police",
+        "Dire Straits",
+        "The Cure",
+        "Duran Duran"
+      ],
+      "fact": "En av de mest spelade låtarna på radio genom tiderna.",
+      "difficulty": 2
+    },
+    {
+      "id": "80tal-005",
+      "type": "which_artist",
+      "song": {
+        "title": "Livin' on a Prayer",
+        "artist": "Bon Jovi",
+        "year": 1986
+      },
+      "prompt": "Vem sjunger \"Livin' on a Prayer\"?",
+      "answer": "Bon Jovi",
+      "options": [
+        "Bon Jovi",
+        "Def Leppard",
+        "Journey",
+        "Aerosmith"
+      ],
+      "fact": "Berättar om paret Tommy och Gina.",
+      "difficulty": 2
+    },
+    {
+      "id": "80tal-006",
+      "type": "missing_word",
+      "song": {
+        "title": "Sweet Child o' Mine",
+        "artist": "Guns N' Roses",
+        "year": 1987
+      },
+      "prompt": "Komplettera Guns N' Roses titel: \"Sweet Child o' ___\"",
+      "answer": "Mine",
+      "options": [
+        "Mine",
+        "Time",
+        "Wine",
+        "Life"
+      ],
+      "fact": "Kännetecknas av Slash inledande gitarriff.",
+      "difficulty": 2
+    },
+    {
+      "id": "80tal-007",
+      "type": "missing_word",
+      "song": {
+        "title": "Girls Just Want to Have Fun",
+        "artist": "Cyndi Lauper",
+        "year": 1983
+      },
+      "prompt": "Komplettera Cyndi Laupers titel: \"Girls Just Want to Have ___\"",
+      "answer": "Fun",
+      "options": [
+        "Fun",
+        "Love",
+        "More",
+        "Cash"
+      ],
+      "fact": "Blev en feministisk hymn och Laupers signaturlåt.",
+      "difficulty": 2
+    },
+    {
+      "id": "80tal-008",
+      "type": "year",
+      "song": {
+        "title": "The Final Countdown",
+        "artist": "Europe",
+        "year": 1986
+      },
+      "prompt": "Vilket år släpptes svenska Europes \"The Final Countdown\"?",
+      "answer": "1986",
+      "options": [
+        "1984",
+        "1986",
+        "1988",
+        "1990"
+      ],
+      "fact": "Det svenska bandet fick en världshit med sitt syntintro.",
+      "difficulty": 2
+    },
+    {
+      "id": "80tal-009",
+      "type": "listen_guess",
+      "song": {
+        "title": "Take On Me",
+        "artist": "a-ha",
+        "year": 1985
+      },
+      "prompt": "Lyssna – vilken låt är detta?",
+      "answer": "Take On Me",
+      "options": [
+        "Take On Me",
+        "The Sun Always Shines on T.V.",
+        "Cry Wolf",
+        "Hunting High and Low"
+      ],
+      "fact": "Norska a-has genombrott, känd för sin serietecknade video.",
+      "difficulty": 2,
+      "audio": {
+        "provider": "itunes",
+        "query": "a-ha Take On Me"
+      }
+    },
+    {
+      "id": "80tal-010",
+      "type": "which_artist",
+      "song": {
+        "title": "Sweet Dreams (Are Made of This)",
+        "artist": "Eurythmics",
+        "year": 1983
+      },
+      "prompt": "Vem framför \"Sweet Dreams (Are Made of This)\"?",
+      "answer": "Eurythmics",
+      "options": [
+        "Eurythmics",
+        "Blondie",
+        "Pet Shop Boys",
+        "Depeche Mode"
+      ],
+      "fact": "Annie Lennox och Dave Stewart utgjorde duon.",
+      "difficulty": 2
+    }
+  ]
+}

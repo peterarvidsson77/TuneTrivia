@@ -1,0 +1,197 @@
+{
+  "id": "onehit",
+  "name": "One-hit wonders",
+  "description": "Artister mest kända för en enda stor hit.",
+  "questions": [
+    {
+      "id": "onehit-001",
+      "type": "one_hit_wonder",
+      "song": {
+        "title": "Macarena",
+        "artist": "Los del Río",
+        "year": 1993
+      },
+      "prompt": "Vem gjorde one-hit-wondern \"Macarena\"?",
+      "answer": "Los del Río",
+      "options": [
+        "Los del Río",
+        "Gipsy Kings",
+        "Las Ketchup",
+        "Los Lobos"
+      ],
+      "fact": "Den spanska duons dansplåga tog över världen 1996.",
+      "difficulty": 2
+    },
+    {
+      "id": "onehit-002",
+      "type": "one_hit_wonder",
+      "song": {
+        "title": "Who Let the Dogs Out",
+        "artist": "Baha Men",
+        "year": 2000
+      },
+      "prompt": "Vem gjorde one-hit-wondern \"Who Let the Dogs Out\"?",
+      "answer": "Baha Men",
+      "options": [
+        "Baha Men",
+        "Aqua",
+        "Vengaboys",
+        "Lou Bega"
+      ],
+      "fact": "Bahamansk grupp med en enda megahit och ett välkänt refrängrop.",
+      "difficulty": 2
+    },
+    {
+      "id": "onehit-003",
+      "type": "one_hit_wonder",
+      "song": {
+        "title": "Mambo No. 5",
+        "artist": "Lou Bega",
+        "year": 1999
+      },
+      "prompt": "Vem gjorde one-hit-wondern \"Mambo No. 5\"?",
+      "answer": "Lou Bega",
+      "options": [
+        "Lou Bega",
+        "Ricky Martin",
+        "Enrique Iglesias",
+        "Shaggy"
+      ],
+      "fact": "Bygger på en mambo av Pérez Prado från 1949.",
+      "difficulty": 2
+    },
+    {
+      "id": "onehit-004",
+      "type": "one_hit_wonder",
+      "song": {
+        "title": "Cotton Eye Joe",
+        "artist": "Rednex",
+        "year": 1994
+      },
+      "prompt": "Vem gjorde one-hit-wondern \"Cotton Eye Joe\"?",
+      "answer": "Rednex",
+      "options": [
+        "Rednex",
+        "Scooter",
+        "Vengaboys",
+        "Aqua"
+      ],
+      "fact": "Svenska Rednex gjorde eurodance av en amerikansk folkmelodi.",
+      "difficulty": 2
+    },
+    {
+      "id": "onehit-005",
+      "type": "one_hit_wonder",
+      "song": {
+        "title": "Blue (Da Ba Dee)",
+        "artist": "Eiffel 65",
+        "year": 1998
+      },
+      "prompt": "Vem gjorde one-hit-wondern \"Blue (Da Ba Dee)\"?",
+      "answer": "Eiffel 65",
+      "options": [
+        "Eiffel 65",
+        "Alice DeeJay",
+        "ATC",
+        "Sash!"
+      ],
+      "fact": "Italiensk grupp vars refräng blev en internetklassiker.",
+      "difficulty": 2
+    },
+    {
+      "id": "onehit-006",
+      "type": "one_hit_wonder",
+      "song": {
+        "title": "Tubthumping",
+        "artist": "Chumbawamba",
+        "year": 1997
+      },
+      "prompt": "Vem gjorde one-hit-wondern \"Tubthumping\"?",
+      "answer": "Chumbawamba",
+      "options": [
+        "Chumbawamba",
+        "The Verve",
+        "Blur",
+        "Oasis"
+      ],
+      "fact": "Refrängen \"I get knocked down…\" gjorde bandet världskänt.",
+      "difficulty": 2
+    },
+    {
+      "id": "onehit-007",
+      "type": "one_hit_wonder",
+      "song": {
+        "title": "Breakfast at Tiffany's",
+        "artist": "Deep Blue Something",
+        "year": 1995
+      },
+      "prompt": "Vem gjorde one-hit-wondern \"Breakfast at Tiffany's\"?",
+      "answer": "Deep Blue Something",
+      "options": [
+        "Deep Blue Something",
+        "Gin Blossoms",
+        "Semisonic",
+        "Fastball"
+      ],
+      "fact": "Texas-bandets enda större hit refererar till filmen med Audrey Hepburn.",
+      "difficulty": 2
+    },
+    {
+      "id": "onehit-008",
+      "type": "one_hit_wonder",
+      "song": {
+        "title": "99 Luftballons",
+        "artist": "Nena",
+        "year": 1983
+      },
+      "prompt": "Vem gjorde one-hit-wondern \"99 Luftballons\"?",
+      "answer": "Nena",
+      "options": [
+        "Nena",
+        "Alphaville",
+        "Falco",
+        "Trio"
+      ],
+      "fact": "Tysk kalla-kriget-hit som även spelades in på engelska.",
+      "difficulty": 2
+    },
+    {
+      "id": "onehit-009",
+      "type": "one_hit_wonder",
+      "song": {
+        "title": "Tarzan Boy",
+        "artist": "Baltimora",
+        "year": 1985
+      },
+      "prompt": "Vem gjorde one-hit-wondern \"Tarzan Boy\"?",
+      "answer": "Baltimora",
+      "options": [
+        "Baltimora",
+        "Modern Talking",
+        "Sabrina",
+        "Den Harrow"
+      ],
+      "fact": "Italo-disco med ett minnesvärt \"oh-oh-oh\"-rop.",
+      "difficulty": 2
+    },
+    {
+      "id": "onehit-010",
+      "type": "one_hit_wonder",
+      "song": {
+        "title": "How Bizarre",
+        "artist": "OMC",
+        "year": 1995
+      },
+      "prompt": "Vem gjorde one-hit-wondern \"How Bizarre\"?",
+      "answer": "OMC",
+      "options": [
+        "OMC",
+        "Crowded House",
+        "Split Enz",
+        "Savage Garden"
+      ],
+      "fact": "Nyzeeländsk hit av Otara Millionaires Club.",
+      "difficulty": 2
+    }
+  ]
+}

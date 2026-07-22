@@ -1,0 +1,197 @@
+{
+  "id": "filmtv",
+  "name": "Film & TV",
+  "description": "Låtar från film och TV.",
+  "questions": [
+    {
+      "id": "filmtv-001",
+      "type": "which_film",
+      "song": {
+        "title": "My Heart Will Go On",
+        "artist": "Céline Dion",
+        "year": 1997
+      },
+      "prompt": "Från vilken film kommer \"My Heart Will Go On\"?",
+      "answer": "Titanic",
+      "options": [
+        "Titanic",
+        "The Bodyguard",
+        "Pretty Woman",
+        "Ghost"
+      ],
+      "fact": "Céline Dions ledmotiv till James Camerons katastroffilm.",
+      "difficulty": 2
+    },
+    {
+      "id": "filmtv-002",
+      "type": "which_film",
+      "song": {
+        "title": "Eye of the Tiger",
+        "artist": "Survivor",
+        "year": 1982
+      },
+      "prompt": "Vilken filmserie förknippas \"Eye of the Tiger\" med?",
+      "answer": "Rocky",
+      "options": [
+        "Rocky",
+        "Rambo",
+        "Karate Kid",
+        "Bloodsport"
+      ],
+      "fact": "Skrevs av Survivor på beställning till \"Rocky III\".",
+      "difficulty": 2
+    },
+    {
+      "id": "filmtv-003",
+      "type": "which_film",
+      "song": {
+        "title": "Let It Go",
+        "artist": "Idina Menzel",
+        "year": 2013
+      },
+      "prompt": "Från vilken film kommer \"Let It Go\"?",
+      "answer": "Frost",
+      "options": [
+        "Frost",
+        "Trassel",
+        "Vaiana",
+        "Encanto"
+      ],
+      "fact": "Elsas hymn vann en Oscar för bästa sång.",
+      "difficulty": 2
+    },
+    {
+      "id": "filmtv-004",
+      "type": "which_film",
+      "song": {
+        "title": "Stayin' Alive",
+        "artist": "Bee Gees",
+        "year": 1977
+      },
+      "prompt": "Från vilken film kommer \"Stayin' Alive\"?",
+      "answer": "Saturday Night Fever",
+      "options": [
+        "Saturday Night Fever",
+        "Grease",
+        "Flashdance",
+        "Footloose"
+      ],
+      "fact": "Bee Gees discoklassiker med John Travolta på affischen.",
+      "difficulty": 2
+    },
+    {
+      "id": "filmtv-005",
+      "type": "which_artist",
+      "song": {
+        "title": "Skyfall",
+        "artist": "Adele",
+        "year": 2012
+      },
+      "prompt": "Vem framför Bond-låten \"Skyfall\"?",
+      "answer": "Adele",
+      "options": [
+        "Adele",
+        "Sam Smith",
+        "Billie Eilish",
+        "Shirley Bassey"
+      ],
+      "fact": "Vann en Oscar för bästa sång till en Bond-film.",
+      "difficulty": 2
+    },
+    {
+      "id": "filmtv-006",
+      "type": "which_film",
+      "song": {
+        "title": "Circle of Life",
+        "artist": "Elton John",
+        "year": 1994
+      },
+      "prompt": "Från vilken film kommer \"Circle of Life\"?",
+      "answer": "Lejonkungen",
+      "options": [
+        "Lejonkungen",
+        "Djungelboken",
+        "Tarzan",
+        "Aladdin"
+      ],
+      "fact": "Öppnar Disneys film med Elton John och Tim Rice bakom musiken.",
+      "difficulty": 2
+    },
+    {
+      "id": "filmtv-007",
+      "type": "which_artist",
+      "song": {
+        "title": "Ghostbusters",
+        "artist": "Ray Parker Jr.",
+        "year": 1984
+      },
+      "prompt": "Vem sjunger ledmotivet till \"Ghostbusters\"?",
+      "answer": "Ray Parker Jr.",
+      "options": [
+        "Ray Parker Jr.",
+        "Lionel Richie",
+        "Kenny Loggins",
+        "Huey Lewis"
+      ],
+      "fact": "\"Who you gonna call?\" – filmmusik som blev egen hit.",
+      "difficulty": 2
+    },
+    {
+      "id": "filmtv-008",
+      "type": "which_artist",
+      "song": {
+        "title": "Mrs. Robinson",
+        "artist": "Simon & Garfunkel",
+        "year": 1968
+      },
+      "prompt": "Vem gjorde \"Mrs. Robinson\" från filmen \"Mandomsprovet\"?",
+      "answer": "Simon & Garfunkel",
+      "options": [
+        "Simon & Garfunkel",
+        "The Byrds",
+        "The Mamas & the Papas",
+        "Crosby, Stills & Nash"
+      ],
+      "fact": "Skrevs till Mike Nichols film \"The Graduate\".",
+      "difficulty": 2
+    },
+    {
+      "id": "filmtv-009",
+      "type": "which_artist",
+      "song": {
+        "title": "I Will Always Love You",
+        "artist": "Whitney Houston",
+        "year": 1992
+      },
+      "prompt": "Vem sjöng \"I Will Always Love You\" i filmen \"The Bodyguard\"?",
+      "answer": "Whitney Houston",
+      "options": [
+        "Whitney Houston",
+        "Mariah Carey",
+        "Céline Dion",
+        "Tina Turner"
+      ],
+      "fact": "Originalet skrevs och framfördes först av Dolly Parton.",
+      "difficulty": 2
+    },
+    {
+      "id": "filmtv-010",
+      "type": "which_artist",
+      "song": {
+        "title": "Footloose",
+        "artist": "Kenny Loggins",
+        "year": 1984
+      },
+      "prompt": "Vem framför titellåten \"Footloose\"?",
+      "answer": "Kenny Loggins",
+      "options": [
+        "Kenny Loggins",
+        "John Parr",
+        "Bonnie Tyler",
+        "Glenn Frey"
+      ],
+      "fact": "Kenny Loggins kallades tidvis \"kungen av filmmusik\".",
+      "difficulty": 2
+    }
+  ]
+}

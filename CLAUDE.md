@@ -11,9 +11,10 @@ Läs denna fil innan du skriver kod. Djupare referensmaterial finns i `docs/`.
 ## Vad är TuneTrivia?
 
 TuneTrivia är ett gruppbaserat musikquiz på webben. Ett lag (2–4 spelare)
-registrerar sig, spelar igenom 50 frågor i fast ordning och får poäng + placering
-på en gemensam topplista. Tänkt för fester, pubkvällar och event. Ingen realtid
-eller storbild i nuläget — varje lag kör quizet självständigt på en enhet.
+registrerar sig, spelar igenom ett **slumpat urval** frågor ur en **temabaserad
+frågebank** och får poäng + placering på en gemensam topplista. Tänkt för fester,
+pubkvällar och event. Ingen realtid eller storbild i nuläget — varje lag kör
+quizet självständigt på en enhet. Slumpad dragning per omgång ger omspelbarhet.
 
 **Syfte/affärsmodell:** A group music quiz game where teams answer music trivia questions
 
@@ -50,6 +51,9 @@ inget det.
 - **Leaderboard-skrivningar valideras server-side** — poängräkningen får ske i
   klienten (casual party-spel, ingen anti-fusk-modell), men backend validerar
   formatet innan en highscore sparas så topplistan inte skräpas ned.
+- **Ingen sångtext i frågebanken** — copyright. "Saknat ord" görs på **titlar**,
+  aldrig på låttextrader; fakta beskriver artist/år/film och citerar aldrig text.
+- **Rätt svar måste finnas i `options`** — valideras vid bygge av frågebanken.
 
 ---
 
@@ -86,7 +90,8 @@ TuneTrivia/
 ├── .env.example         ← config-mall (riktig .env committas aldrig)
 ├── .gitignore
 ├── frontend/            ← (planeras) React + Vite-app (portas från Base44)
-├── backend/             ← (planeras) Node-API + Postgres-lager (ersätter Base44)
+├── backend/             ← Node-API + Postgres (migrations/ finns)
+├── data/questions/      ← temabaserad frågebank (JSON per tema + index.json)
 ├── docs/                ← game-design.md, db-schema, api, deploy
 └── tests/               ← testsuite (npm test)
 ```
@@ -237,6 +242,7 @@ Fylls i allt eftersom vi skapar det.
 | Ämne | Fil |
 |------|-----|
 | Spel-spec (frågor, faser, entiteter) | [`docs/game-design.md`](docs/game-design.md) |
+| Frågebank (teman, format, regler) | [`data/questions/README.md`](data/questions/README.md) |
 | DB-schema | [`docs/db-schema.md`](docs/db-schema.md) |
 | API-endpoints | [`docs/api.md`](docs/api.md) |
 | Deploy-guide | `docs/deploy.md` (planeras) |

@@ -1,0 +1,159 @@
+{
+  "id": "mello",
+  "name": "Melodifestivalen",
+  "description": "Svenska bidrag och Eurovision-vinnare.",
+  "questions": [
+    {
+      "id": "mello-001",
+      "type": "which_artist",
+      "song": {
+        "title": "Euphoria",
+        "artist": "Loreen",
+        "year": 2012
+      },
+      "prompt": "Vem vann Eurovision 2012 med \"Euphoria\"?",
+      "answer": "Loreen",
+      "options": [
+        "Loreen",
+        "Sanna Nielsen",
+        "Molly Sandén",
+        "Charlotte Perrelli"
+      ],
+      "fact": "En av Eurovisions mest hyllade vinnarlåtar genom tiderna.",
+      "difficulty": 2
+    },
+    {
+      "id": "mello-002",
+      "type": "which_artist",
+      "song": {
+        "title": "Tattoo",
+        "artist": "Loreen",
+        "year": 2023
+      },
+      "prompt": "Vem vann Eurovision 2023 med \"Tattoo\"?",
+      "answer": "Loreen",
+      "options": [
+        "Loreen",
+        "Cornelia Jakobs",
+        "Tusse",
+        "Zara Larsson"
+      ],
+      "fact": "Gjorde Loreen till andra artist att vinna Eurovision två gånger.",
+      "difficulty": 2
+    },
+    {
+      "id": "mello-003",
+      "type": "which_artist",
+      "song": {
+        "title": "Heroes",
+        "artist": "Måns Zelmerlöw",
+        "year": 2015
+      },
+      "prompt": "Vem vann Eurovision 2015 med \"Heroes\"?",
+      "answer": "Måns Zelmerlöw",
+      "options": [
+        "Måns Zelmerlöw",
+        "Robin Bengtsson",
+        "Benjamin Ingrosso",
+        "Eric Saade"
+      ],
+      "fact": "Känd för sin animerade scenshow med en tecknad figur.",
+      "difficulty": 2
+    },
+    {
+      "id": "mello-004",
+      "type": "which_artist",
+      "song": {
+        "title": "Diggi-Loo Diggi-Ley",
+        "artist": "Herreys",
+        "year": 1984
+      },
+      "prompt": "Vem vann Eurovision 1984 med \"Diggi-Loo Diggi-Ley\"?",
+      "answer": "Herreys",
+      "options": [
+        "Herreys",
+        "Arvingarna",
+        "Blond",
+        "Nordman"
+      ],
+      "fact": "Bröderna Herrey dansade i guldskor.",
+      "difficulty": 2
+    },
+    {
+      "id": "mello-005",
+      "type": "which_artist",
+      "song": {
+        "title": "Fångad av en stormvind",
+        "artist": "Carola",
+        "year": 1991
+      },
+      "prompt": "Vem vann Eurovision 1991 med \"Fångad av en stormvind\"?",
+      "answer": "Carola",
+      "options": [
+        "Carola",
+        "Lena Philipsson",
+        "Kikki Danielsson",
+        "Charlotte Nilsson"
+      ],
+      "fact": "Carolas andra av tre Melodifestival-segrar.",
+      "difficulty": 2
+    },
+    {
+      "id": "mello-006",
+      "type": "which_artist",
+      "song": {
+        "title": "Take Me to Your Heaven",
+        "artist": "Charlotte Nilsson",
+        "year": 1999
+      },
+      "prompt": "Vem vann Eurovision 1999 med \"Take Me to Your Heaven\"?",
+      "answer": "Charlotte Nilsson",
+      "options": [
+        "Charlotte Nilsson",
+        "Carola",
+        "Jill Johnson",
+        "Marie Bergman"
+      ],
+      "fact": "Charlotte (senare Perrelli) tog hem Sveriges fjärde seger.",
+      "difficulty": 2
+    },
+    {
+      "id": "mello-007",
+      "type": "year",
+      "song": {
+        "title": "Euphoria",
+        "artist": "Loreen",
+        "year": 2012
+      },
+      "prompt": "Vilket år vann Loreen Eurovision första gången?",
+      "answer": "2012",
+      "options": [
+        "2010",
+        "2012",
+        "2014",
+        "2016"
+      ],
+      "fact": "Elva år innan hennes andra seger med \"Tattoo\".",
+      "difficulty": 2
+    },
+    {
+      "id": "mello-008",
+      "type": "which_artist",
+      "song": {
+        "title": "Invincible",
+        "artist": "Carola",
+        "year": 2006
+      },
+      "prompt": "Vem vann Melodifestivalen 2006 med \"Invincible\"?",
+      "answer": "Carola",
+      "options": [
+        "Carola",
+        "Sanna Nielsen",
+        "Nanne Grönvall",
+        "Shirley Clamp"
+      ],
+      "fact": "Carolas fjärde deltagande som segrare i den svenska uttagningen.",
+      "difficulty": 2
+    }
+  ]
+}

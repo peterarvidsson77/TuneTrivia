@@ -1,0 +1,197 @@
+{
+  "id": "svenska",
+  "name": "Svenska hits",
+  "description": "Svenska artister och klassiker.",
+  "questions": [
+    {
+      "id": "svenska-001",
+      "type": "year",
+      "song": {
+        "title": "Waterloo",
+        "artist": "ABBA",
+        "year": 1974
+      },
+      "prompt": "Vilket år vann ABBA med \"Waterloo\"?",
+      "answer": "1974",
+      "options": [
+        "1972",
+        "1974",
+        "1976",
+        "1978"
+      ],
+      "fact": "Segern i Brighton blev startskottet för ABBAs världskarriär.",
+      "difficulty": 2
+    },
+    {
+      "id": "svenska-002",
+      "type": "year",
+      "song": {
+        "title": "Dancing Queen",
+        "artist": "ABBA",
+        "year": 1976
+      },
+      "prompt": "Vilket år släpptes ABBAs \"Dancing Queen\"?",
+      "answer": "1976",
+      "options": [
+        "1974",
+        "1976",
+        "1978",
+        "1980"
+      ],
+      "fact": "ABBAs enda etta på amerikanska Billboard Hot 100.",
+      "difficulty": 2
+    },
+    {
+      "id": "svenska-003",
+      "type": "year",
+      "song": {
+        "title": "The Look",
+        "artist": "Roxette",
+        "year": 1989
+      },
+      "prompt": "Vilket år släpptes Roxettes \"The Look\"?",
+      "answer": "1989",
+      "options": [
+        "1987",
+        "1989",
+        "1991",
+        "1993"
+      ],
+      "fact": "Gav den svenska duon en oväntad etta i USA.",
+      "difficulty": 2
+    },
+    {
+      "id": "svenska-004",
+      "type": "which_artist",
+      "song": {
+        "title": "All That She Wants",
+        "artist": "Ace of Base",
+        "year": 1993
+      },
+      "prompt": "Vem gjorde \"All That She Wants\"?",
+      "answer": "Ace of Base",
+      "options": [
+        "Ace of Base",
+        "Roxette",
+        "The Cardigans",
+        "A-Teens"
+      ],
+      "fact": "Från Göteborgsgruppens album \"Happy Nation\".",
+      "difficulty": 2
+    },
+    {
+      "id": "svenska-005",
+      "type": "which_artist",
+      "song": {
+        "title": "Dancing On My Own",
+        "artist": "Robyn",
+        "year": 2010
+      },
+      "prompt": "Vem sjunger \"Dancing On My Own\"?",
+      "answer": "Robyn",
+      "options": [
+        "Robyn",
+        "Zara Larsson",
+        "Tove Lo",
+        "Icona Pop"
+      ],
+      "fact": "Hyllad synthpop-låt om att se sitt ex på dansgolvet.",
+      "difficulty": 2
+    },
+    {
+      "id": "svenska-006",
+      "type": "which_artist",
+      "song": {
+        "title": "Wake Me Up",
+        "artist": "Avicii",
+        "year": 2013
+      },
+      "prompt": "Vem ligger bakom \"Wake Me Up\"?",
+      "answer": "Avicii",
+      "options": [
+        "Avicii",
+        "Alesso",
+        "Swedish House Mafia",
+        "Eric Prydz"
+      ],
+      "fact": "Kombinerade house med folkmusik och sång av Aloe Blacc.",
+      "difficulty": 2
+    },
+    {
+      "id": "svenska-007",
+      "type": "which_artist",
+      "song": {
+        "title": "Kom igen Lena!",
+        "artist": "Håkan Hellström",
+        "year": 2002
+      },
+      "prompt": "Vem sjunger \"Kom igen Lena!\"?",
+      "answer": "Håkan Hellström",
+      "options": [
+        "Håkan Hellström",
+        "Lars Winnerbäck",
+        "Bo Kaspers Orkester",
+        "Kent"
+      ],
+      "fact": "En av Göteborgsartistens mest älskade singlar.",
+      "difficulty": 2
+    },
+    {
+      "id": "svenska-008",
+      "type": "which_artist",
+      "song": {
+        "title": "Sommartider",
+        "artist": "Gyllene Tider",
+        "year": 1982
+      },
+      "prompt": "Vem gjorde svenska sommarklassikern \"Sommartider\"?",
+      "answer": "Gyllene Tider",
+      "options": [
+        "Gyllene Tider",
+        "Gyllene Dagar",
+        "Noice",
+        "Eldkvarn"
+      ],
+      "fact": "Per Gessles band, senare halva Roxette.",
+      "difficulty": 2
+    },
+    {
+      "id": "svenska-009",
+      "type": "which_artist",
+      "song": {
+        "title": "Lush Life",
+        "artist": "Zara Larsson",
+        "year": 2015
+      },
+      "prompt": "Vem framför \"Lush Life\"?",
+      "answer": "Zara Larsson",
+      "options": [
+        "Zara Larsson",
+        "Tove Lo",
+        "Molly Sandén",
+        "Icona Pop"
+      ],
+      "fact": "Internationell hit för den svenska popstjärnan.",
+      "difficulty": 2
+    },
+    {
+      "id": "svenska-010",
+      "type": "which_artist",
+      "song": {
+        "title": "Måndagsbarn",
+        "artist": "Veronica Maggio",
+        "year": 2011
+      },
+      "prompt": "Vem sjunger \"Måndagsbarn\"?",
+      "answer": "Veronica Maggio",
+      "options": [
+        "Veronica Maggio",
+        "Laleh",
+        "Miriam Bryant",
+        "Seinabo Sey"
+      ],
+      "fact": "Från albumet \"Satan i gatan\".",
+      "difficulty": 2
+    }
+  ]
+}
