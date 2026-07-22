@@ -9,18 +9,20 @@ Scaffold, projektminne, datamodell + migration, API-kontrakt, temabaserad
 frågebank (116 frågor, 11 teman), författarhjälp (iTunes-sök), spelbara prototyper
 (quiz + humppacovers), delbar text-version.
 
-## Fas 1 — Backend (skarp) ⬜
+## Fas 1 — Backend (skarp) ✅ (klart)
 
-Node + **TypeScript**, implementerar `api.md` mot Postgres.
+Node + **TypeScript** + **Fastify** + **Drizzle** + **zod**. Kod i `backend/`.
 
-- Ramverk: Fastify (lätt, TS-vänligt) eller Express.
-- DB-access: Drizzle (typer + migrations) **eller** `pg` + prepared statements.
-- Endpoints: `POST /api/highscores`, `GET /api/highscores`, `GET /api/stats`.
-- **Förbättring mot originalet:** `GET /api/preview?q=...` som resolvar iTunes-preview
+- ✅ Endpoints: `POST /api/highscores`, `GET /api/highscores`, `GET /api/stats`.
+- ✅ **Förbättring mot originalet:** `GET /api/preview?q=...` resolvar iTunes-preview
   server-side (cache-bar, slipper JSONP i klienten, URL:er kan inte ruttna).
-- Validering med zod (delas klient/server), enhetligt svarskuvert, felhantering.
-- `total` sätts från config (`QUESTION_COUNT`), inte klienten.
-- Enkla tester (`node --test`/vitest) för validering + scoring-format.
+- ✅ Validering med zod, enhetligt svarskuvert, fel-/404-hantering.
+- ✅ `total` sätts från config (`QUESTION_COUNT`), inte klienten.
+- ✅ Drizzle-schema + genererad migration; statistik härledd i SQL.
+- ✅ 13 enhetstester (validering, itunes, envelope) gröna; typecheck rent; server
+  bootar och svarar korrekt. DB-integration kräver körande Postgres.
+
+Se [`../backend/README.md`](../backend/README.md).
 
 ## Fas 2 — Frontend (skarp) ⬜
 
@@ -46,8 +48,9 @@ React + Vite + TypeScript + Tailwind. Portar kompisens komponenter där det går
 - Ev. författar-admin (Nivå 1: iTunes-sök → JSON; se `backend/tools/`).
 - Lagnamns-förslag ("Tips"-knappen).
 
-## Beslut som styr Fas 1 (öppna)
+## Beslut (låsta i Fas 1)
 
-- **TypeScript:** ja (rekommendation).
-- **ORM:** Drizzle vs rå `pg`. Bekräfta innan Fas 1.
+- **TypeScript:** ja, backend + frontend.
+- **ORM:** Drizzle (typer + migrations).
+- **Backend-ramverk:** Fastify.
 - **Ingen auth** — appen är publik (verifierat mot Base44).

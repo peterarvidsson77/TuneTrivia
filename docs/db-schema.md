@@ -1,7 +1,9 @@
 # DB-schema — TuneTrivia (PostgreSQL)
 
-Ersätter Base44:s datalager. Migrationer i
-[`backend/migrations/`](../backend/migrations/), körs i filordning.
+Ersätter Base44:s datalager. **Källa:** Drizzle-schemat i
+[`backend/src/db/schema.ts`](../backend/src/db/schema.ts). Migrationer genereras
+därifrån till `backend/drizzle/` (`npm run db:generate`) och appliceras med
+`npm run db:migrate`.
 
 ## Vad som ligger i DB — och inte
 
@@ -22,13 +24,13 @@ Ersätter Base44:s datalager. Migrationer i
 | `total` | `INTEGER` | Max möjliga. **Sätts server-side** från config (`QUESTION_COUNT`), inte från klienten |
 | `created_at` | `TIMESTAMPTZ` | Default `now()` |
 
-**Constraints** (se [`001_high_scores.sql`](../backend/migrations/001_high_scores.sql)):
+**Constraints** (i schemat, genererade till migrationen):
 `team_name` 1–40 tecken · `players` är array med 2–4 element · `0 ≤ score ≤ total`
 · `total > 0`. Constraints är sista skyddsnätet — huvudvalideringen sker i
-backend (se [`api.md`](api.md)).
+backend med zod (se [`api.md`](api.md)).
 
-**Index:** `(score DESC, created_at ASC)` — topplistans sorteringsordning (högst
-poäng först, tidigast inskickad bryter lika).
+**Index:** btree på `(score, created_at)` — stödjer topplistans fråga
+(`ORDER BY score DESC, created_at ASC`).
 
 ## Statistik härleds (inga egna kolumner)
 

@@ -1,10 +1,12 @@
 {
-  "version": "v0.5.2",
+  "version": "v0.6.0",
   "date": "2026-07-22",
-  "label": "Roadmap / fasplan",
+  "label": "Fas 1 — skarp backend",
   "changes": [
-    "docs/roadmap.md: fasplan från scaffold till produktion (Fas 0 klart; Fas 1 backend, 2 frontend, 3 deploy/CI, 4 polish).",
-    "Destillerat ur en tidigare Perplexity-prompt: lägger produktionskvalitetsribba (TS, validering, felhantering, CI) men behåller våra grundade beslut (ingen auth, Vite, frågor i frontend).",
-    "Föreslagen förbättring mot originalet: server-side iTunes-preview-endpoint (cache-bar, ersätter klient-JSONP)."
+    "Backend implementerad: Node + TypeScript + Fastify + Drizzle + zod i backend/.",
+    "Endpoints: POST/GET /api/highscores, GET /api/stats, GET /api/preview (server-side iTunes-uppslag, cache-bar) + /health.",
+    "Enhetligt svarskuvert, zod-validering, fel-/404-hantering; total sätts från config ej klient; statistik härledd i SQL.",
+    "Drizzle-schema + genererad migration (ersätter handskriven SQL). 13 enhetstester gröna, typecheck rent, server bootar och svarar.",
+    "Docs uppdaterade: backend/README.md, roadmap Fas 1 klar, db-schema pekar på Drizzle, CLAUDE.md stack."
   ]
 }

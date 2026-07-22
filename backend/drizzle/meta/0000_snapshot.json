@@ -1,0 +1,108 @@
+{
+  "id": "eaae7c8b-fa88-4fb2-9994-4dc30a7beb8d",
+  "prevId": "00000000-0000-0000-0000-000000000000",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.high_scores": {
+      "name": "high_scores",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "team_name": {
+          "name": "team_name",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "players": {
+          "name": "players",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "score": {
+          "name": "score",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "total": {
+          "name": "total",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {
+        "high_scores_leaderboard_idx": {
+          "name": "high_scores_leaderboard_idx",
+          "columns": [
+            {
+              "expression": "score",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "created_at",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": false,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {
+        "score_range": {
+          "name": "score_range",
+          "value": "\"high_scores\".\"score\" >= 0 AND \"high_scores\".\"score\" <= \"high_scores\".\"total\""
+        },
+        "total_positive": {
+          "name": "total_positive",
+          "value": "\"high_scores\".\"total\" > 0"
+        },
+        "team_name_len": {
+          "name": "team_name_len",
+          "value": "char_length(btrim(\"high_scores\".\"team_name\")) between 1 and 40"
+        },
+        "players_shape": {
+          "name": "players_shape",
+          "value": "jsonb_typeof(\"high_scores\".\"players\") = 'array' and jsonb_array_length(\"high_scores\".\"players\") between 2 and 4"
+        }
+      },
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

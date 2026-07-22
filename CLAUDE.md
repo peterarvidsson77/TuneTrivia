@@ -62,10 +62,11 @@ inget det.
 - **Frontend:** React + Tailwind CSS + Vite. Framer Motion (animationer),
   lucide-react (ikoner). Portas från Base44-appen — behåll komponenterna, byt ut
   datalagret.
-- **Backend:** Node.js — ersätter Base44 BaaS (databas + hosting). Enhetligt
-  API-svarskuvert. **Ingen WebSocket** (spelet är inte realtid).
-- **Databas:** PostgreSQL — prepared statements. Startentitet: `HighScore`
-  (se [`docs/game-design.md`](docs/game-design.md)).
+- **Backend:** Node.js + **TypeScript** + **Fastify**, ersätter Base44 BaaS.
+  Enhetligt API-svarskuvert, zod-validering. **Ingen WebSocket** (ej realtid).
+  Kod i `backend/` (se [`backend/README.md`](backend/README.md)).
+- **Databas:** PostgreSQL via **Drizzle ORM** (parametriserade queries, migrations).
+  Startentitet: `high_scores`.
 - **Externt API:** iTunes Search API för 30-sek låtpreviews (spelas max ~5 sek så
   låtnamnet inte avslöjas) i "Lyssna & gissa"-frågorna.
 - **Config:** miljövariabler (`.env`), mall i `.env.example`. Inga hårdkodade
