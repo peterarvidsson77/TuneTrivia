@@ -1,10 +1,10 @@
 {
-  "version": "v0.5.0",
+  "version": "v0.5.1",
   "date": "2026-07-22",
-  "label": "Frågebank batch 2 — årtionden + hiphop",
+  "label": "Testsida för hela banken",
   "changes": [
-    "5 nya teman (70-tal, 90-tal, 2000-tal, 2010-tal, Hiphop) med 10 frågor styck = 50 nya frågor.",
-    "Frågebanken totalt 116 frågor i 11 teman; index.json regenererad.",
-    "Högkonfident material, copyright-säkert (titlar/artist/år, ingen låttext), samma schema; rätt svar valideras finnas i options."
+    "prototypes/quiz-player.html: testa en slumpad omgång ur hela banken — välj tema (eller alla) och antal frågor (5/10/15/20).",
+    "Hanterar alla frågetyper: textfrågor direkt, ljudfrågor (listen_guess/cover_original) med iTunes-preview och längd-väljare.",
+    "build.py genererar nu båda prototyperna (quiz-player + finskcover-player) från datan. Röktestad i webbläsare (116 frågor, text + ljud)."
   ]
 }

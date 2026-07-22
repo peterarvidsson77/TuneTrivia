@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TuneTrivia – testa en omgång (prototyp)</title>
+<style>
+  :root { --bg:#0a0118; --card:#170b2e; --card2:#1e0f3d; --line:#33235c;
+          --fuchsia:#d946ef; --indigo:#6366f1; --txt:#f3e8ff; --muted:#a78bce;
+          --ok:#22c55e; --bad:#ef4444; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; background:
+      radial-gradient(1200px 600px at 50% -10%, #2a1350 0%, var(--bg) 60%);
+      color:var(--txt); font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      display:flex; align-items:center; justify-content:center; padding:24px; }
+  .wrap { width:100%; max-width:600px; }
+  .badge { display:inline-block; font-size:12px; letter-spacing:.5px; text-transform:uppercase;
+      color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:4px 12px; }
+  h1 { font-size:24px; margin:14px 0 2px; background:linear-gradient(90deg,var(--fuchsia),var(--indigo));
+      -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .sub { color:var(--muted); font-size:14px; margin-bottom:18px; }
+  .card { background:linear-gradient(160deg,var(--card),var(--card2)); border:1px solid var(--line);
+      border-radius:20px; padding:24px; box-shadow:0 20px 60px rgba(0,0,0,.45); }
+  .label { color:var(--muted); font-size:13px; margin:2px 0 8px; }
+  .pills { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px; }
+  .pill { background:#20123f; border:1px solid var(--line); color:var(--muted); cursor:pointer;
+      border-radius:999px; padding:7px 14px; font-size:13px; transition:all .15s; }
+  .pill:hover { border-color:var(--fuchsia); color:var(--txt); }
+  .pill.on { background:linear-gradient(90deg,var(--fuchsia),var(--indigo)); color:#fff; border-color:transparent; }
+  .cta { width:100%; border:none; cursor:pointer; border-radius:14px; padding:16px; font-size:16px;
+      font-weight:600; color:#fff; background:linear-gradient(90deg,var(--fuchsia),var(--indigo)); transition:transform .08s; }
+  .cta:active { transform:scale(.98); }
+  .qbadges { display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
+  .qbadge { font-size:11px; letter-spacing:.4px; text-transform:uppercase; color:var(--muted);
+      border:1px solid var(--line); border-radius:999px; padding:3px 10px; }
+  .progress { display:flex; justify-content:space-between; color:var(--muted); font-size:13px; margin-bottom:12px; }
+  .prompt { font-size:19px; font-weight:600; margin:6px 0 14px; line-height:1.35; }
+  .play { width:100%; border:none; cursor:pointer; border-radius:14px; padding:16px; font-size:16px;
+      font-weight:600; color:#fff; background:linear-gradient(90deg,var(--fuchsia),var(--indigo)); transition:transform .08s,opacity .2s; }
+  .play:active { transform:scale(.98); } .play[disabled]{opacity:.55;cursor:default;}
+  .lens { display:flex; gap:8px; justify-content:center; margin:10px 0 2px; }
+  .len { background:#20123f; border:1px solid var(--line); color:var(--muted); cursor:pointer;
+      border-radius:999px; padding:5px 14px; font-size:13px; transition:all .15s; }
+  .len:hover { border-color:var(--fuchsia); color:var(--txt); }
+  .len.on { background:linear-gradient(90deg,var(--fuchsia),var(--indigo)); color:#fff; border-color:transparent; }
+  .eq { height:24px; display:flex; gap:4px; align-items:flex-end; justify-content:center; margin:12px 0 6px; }
+  .eq span { width:5px; background:linear-gradient(var(--fuchsia),var(--indigo)); border-radius:3px; height:6px; }
+  .eq.playing span { animation:b .6s ease-in-out infinite; }
+  .eq span:nth-child(2){animation-delay:.1s}.eq span:nth-child(3){animation-delay:.2s}
+  .eq span:nth-child(4){animation-delay:.3s}.eq span:nth-child(5){animation-delay:.15s}
+  @keyframes b { 0%,100%{height:6px} 50%{height:24px} }
+  .opts { display:grid; gap:10px; margin-top:6px; }
+  .opt { text-align:left; background:#20123f; border:1px solid var(--line); color:var(--txt);
+      padding:14px 16px; border-radius:12px; font-size:15px; cursor:pointer; transition:background .15s,border-color .15s; }
+  .opt:hover:not([disabled]) { background:#2a1852; border-color:var(--fuchsia); }
+  .opt[disabled]{cursor:default;} .opt.ok{background:rgba(34,197,94,.16);border-color:var(--ok);}
+  .opt.bad{background:rgba(239,68,68,.16);border-color:var(--bad);}
+  .reveal { margin-top:18px; padding:16px; border-radius:12px; background:#12082a; border:1px solid var(--line); }
+  .reveal .orig{font-weight:600;} .reveal .cov{color:var(--muted);font-size:13px;margin-top:2px;}
+  .reveal .fact{font-size:14px;margin-top:8px;}
+  .next { margin-top:16px; width:100%; border:none; cursor:pointer; border-radius:12px; padding:14px;
+      font-weight:600; color:#fff; background:#3a2170; } .next:hover{background:#48298a;}
+  .hidden{display:none;} .result{text-align:center;} .score{font-size:44px;font-weight:700;margin:10px 0;}
+  .err{color:#fca5a5;font-size:13px;margin-top:8px;min-height:16px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="badge">Prototyp · TuneTrivia</span>
+  <h1>Testa en omgång</h1>
+  <div class="sub">Slumpar frågor ur hela banken. Välj tema och längd.</div>
+  <div class="card" id="card"></div>
+</div>
+<script>
+const DATA = __DATA__;
+const LENGTHS = [5,10,15,30];
+let clipMs = 15000, selTheme = "all", roundN = 10;
+let pool = [], i = 0, score = 0, audio = null;
+const cache = {};
+
+function shuffle(a){ a=a.slice(); for(let j=a.length-1;j>0;j--){const k=Math.floor(Math.random()*(j+1));[a[j],a[k]]=[a[k],a[j]];} return a; }
+
+function itunes(term){
+  if(cache[term]) return Promise.resolve(cache[term]);
+  return new Promise((res,rej)=>{
+    const cb='itcb_'+Math.random().toString(36).slice(2);
+    const s=document.createElement('script');
+    const to=setTimeout(()=>{cleanup();rej(new Error('timeout'));},8000);
+    function cleanup(){clearTimeout(to);delete window[cb];s.remove();}
+    window[cb]=(d)=>{const r=(d.results||[]);
+      const hit=r.find(x=>x.previewUrl); cache[term]=hit?hit.previewUrl:null; cleanup(); res(cache[term]);};
+    s.onerror=()=>{cleanup();rej(new Error('nätverk'));};
+    s.src=`https://itunes.apple.com/search?term=${encodeURIComponent(term)}&entity=song&limit=5&callback=${cb}`;
+    document.body.appendChild(s);
+  });
+}
+function stopAudio(){ if(audio){audio.pause();audio=null;} document.querySelector('.eq')?.classList.remove('playing'); }
+
+async function play(query, btn, eq, err){
+  err.textContent=''; btn.disabled=true; btn.textContent='Laddar…';
+  try{
+    const url=await itunes(query);
+    if(!url){ err.textContent='Hittade ingen preview.'; btn.disabled=false; btn.textContent='▶ Spela igen'; return; }
+    stopAudio(); audio=new Audio(url); eq.classList.add('playing'); await audio.play();
+    btn.textContent='▶ Spela igen';
+    setTimeout(()=>{ stopAudio(); btn.disabled=false; }, clipMs);
+  }catch(e){ err.textContent='Kunde inte spela ('+e.message+').'; btn.disabled=false; btn.textContent='▶ Spela'; eq.classList.remove('playing'); }
+}
+
+function renderStart(){
+  const card=document.getElementById('card');
+  const themes=[{id:"all",name:"🎲 Alla teman",count:DATA.questions.length}].concat(DATA.themes);
+  card.innerHTML=`
+    <div class="label">Tema</div>
+    <div class="pills" id="themes">${themes.map(t=>`<button class="pill ${selTheme===t.id?'on':''}" data-t="${t.id}">${t.name} (${t.count})</button>`).join('')}</div>
+    <div class="label">Antal frågor</div>
+    <div class="pills" id="counts">${[5,10,15,20].map(n=>`<button class="pill ${roundN===n?'on':''}" data-n="${n}">${n}</button>`).join('')}</div>
+    <button class="cta">▶ Starta omgång</button>`;
+  card.querySelectorAll('#themes .pill').forEach(b=>b.onclick=()=>{ selTheme=b.dataset.t;
+    card.querySelectorAll('#themes .pill').forEach(x=>x.classList.toggle('on',x===b)); });
+  card.querySelectorAll('#counts .pill').forEach(b=>b.onclick=()=>{ roundN=Number(b.dataset.n);
+    card.querySelectorAll('#counts .pill').forEach(x=>x.classList.toggle('on',x===b)); });
+  card.querySelector('.cta').onclick=start;
+}
+
+function start(){
+  const src = selTheme==="all" ? DATA.questions : DATA.questions.filter(q=>q.themeId===selTheme);
+  pool = shuffle(src).slice(0, Math.min(roundN, src.length));
+  i=0; score=0; render();
+}
+
+function render(){
+  const card=document.getElementById('card');
+  if(i>=pool.length) return renderResult(card);
+  const q=pool[i]; const opts=shuffle(q.options);
+  const audioCtrls = q.audio ? `
+    <button class="play">▶ Spela (${clipMs/1000} sek)</button>
+    <div class="lens">${LENGTHS.map(s=>`<button class="len ${clipMs===s*1000?'on':''}" data-s="${s}">${s}s</button>`).join('')}</div>
+    <div class="eq"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="err"></div>` : ``;
+  card.innerHTML=`
+    <div class="progress"><span>Fråga ${i+1} / ${pool.length}</span><span>Poäng: ${score}</span></div>
+    <div class="qbadges"><span class="qbadge">${q.theme}</span><span class="qbadge">${q.typeLabel}</span></div>
+    <div class="prompt">${q.prompt}</div>
+    ${audioCtrls}
+    <div class="opts">${opts.map(o=>`<button class="opt" data-o="${encodeURIComponent(o)}">${o}</button>`).join('')}</div>
+    <div class="reveal hidden"></div>
+    <button class="next hidden">Nästa →</button>`;
+  if(q.audio){
+    const playBtn=card.querySelector('.play'), eq=card.querySelector('.eq'), err=card.querySelector('.err');
+    playBtn.onclick=()=>play(q.audio,playBtn,eq,err);
+    card.querySelectorAll('.len').forEach(b=>b.onclick=()=>{ clipMs=Number(b.dataset.s)*1000;
+      card.querySelectorAll('.len').forEach(x=>x.classList.toggle('on',x===b));
+      playBtn.textContent=`▶ Spela (${clipMs/1000} sek)`; });
+  }
+  card.querySelectorAll('.opt').forEach(b=>{
+    b.onclick=()=>{
+      const chosen=decodeURIComponent(b.dataset.o); const correct=chosen===q.answer;
+      if(correct) score++; stopAudio();
+      card.querySelectorAll('.opt').forEach(x=>{ x.disabled=true; const v=decodeURIComponent(x.dataset.o);
+        if(v===q.answer)x.classList.add('ok'); else if(v===chosen)x.classList.add('bad'); });
+      const rev=card.querySelector('.reveal');
+      rev.innerHTML=`<div class="orig">${correct?'✅ Rätt!':'❌ Fel'} — ${q.reveal}</div>
+        ${q.cover?`<div class="cov">Humppacover: ${q.cover}</div>`:``}
+        <div class="fact">${q.fact}</div>`;
+      rev.classList.remove('hidden');
+      const next=card.querySelector('.next'); next.classList.remove('hidden');
+      next.onclick=()=>{ i++; render(); };
+    };
+  });
+}
+
+function renderResult(card){
+  card.innerHTML=`<div class="result">
+    <div class="sub">Omgång klar</div>
+    <div class="score">${score} / ${pool.length}</div>
+    <button class="cta" style="max-width:260px;margin:0 auto;">↩ Till start</button></div>`;
+  card.querySelector('.cta').onclick=renderStart;
+}
+
+renderStart();
+</script>
+</body>
+</html>
