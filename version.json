@@ -1,10 +1,10 @@
 {
-  "version": "v0.4.1",
+  "version": "v0.4.2",
   "date": "2026-07-22",
-  "label": "Tema: Finska humppacovers",
+  "label": "Prototyp: humppacover-spelare",
   "changes": [
-    "Nytt tema finskcover: 18 cover_original-frågor (Eläkeläiset humppacovers → gissa originalet), byggda från användarens Spotify-lista.",
-    "Alla covers verifierade tillgängliga på iTunes med preview; originalår korrigerade (Spotify-remaster-år ignorerade).",
-    "Frågebanken totalt 66 frågor i 6 teman; index.json regenererad."
+    "prototypes/finskcover-player.html: spelbar demo av cover_original-flödet (spela 5 sek humppacover → gissa originalet), slumpar 10 frågor/omgång.",
+    "Ljud via live iTunes-uppslag (JSONP) på audio.query — samma mekanism som riktiga appen ska använda. Röktestad: uppslag + rendering verifierade.",
+    "Reproducerbart bygge: prototypes/template.html + build.py genererar HTML från finskcover.json."
   ]
 }

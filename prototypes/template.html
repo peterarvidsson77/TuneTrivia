@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TuneTrivia – Finska humppacovers (prototyp)</title>
+<style>
+  :root { --bg:#0a0118; --card:#170b2e; --card2:#1e0f3d; --line:#33235c;
+          --fuchsia:#d946ef; --indigo:#6366f1; --txt:#f3e8ff; --muted:#a78bce;
+          --ok:#22c55e; --bad:#ef4444; }
+  * { box-sizing:border-box; }
+  body { margin:0; min-height:100vh; background:
+      radial-gradient(1200px 600px at 50% -10%, #2a1350 0%, var(--bg) 60%);
+      color:var(--txt); font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+      display:flex; align-items:center; justify-content:center; padding:24px; }
+  .wrap { width:100%; max-width:560px; }
+  .badge { display:inline-block; font-size:12px; letter-spacing:.5px; text-transform:uppercase;
+      color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:4px 12px; }
+  h1 { font-size:22px; margin:14px 0 2px; background:linear-gradient(90deg,var(--fuchsia),var(--indigo));
+      -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .sub { color:var(--muted); font-size:14px; margin-bottom:18px; }
+  .card { background:linear-gradient(160deg,var(--card),var(--card2)); border:1px solid var(--line);
+      border-radius:20px; padding:24px; box-shadow:0 20px 60px rgba(0,0,0,.45); }
+  .progress { display:flex; justify-content:space-between; color:var(--muted); font-size:13px; margin-bottom:14px; }
+  .play { width:100%; border:none; cursor:pointer; border-radius:14px; padding:18px;
+      font-size:16px; font-weight:600; color:#fff; margin-bottom:6px;
+      background:linear-gradient(90deg,var(--fuchsia),var(--indigo)); transition:transform .08s, opacity .2s; }
+  .play:active { transform:scale(.98); }
+  .play[disabled] { opacity:.55; cursor:default; }
+  .eq { height:26px; display:flex; gap:4px; align-items:flex-end; justify-content:center; margin:12px 0 18px; }
+  .eq span { width:5px; background:linear-gradient(var(--fuchsia),var(--indigo)); border-radius:3px; height:6px; }
+  .eq.playing span { animation:b .6s ease-in-out infinite; }
+  .eq span:nth-child(2){animation-delay:.1s}.eq span:nth-child(3){animation-delay:.2s}
+  .eq span:nth-child(4){animation-delay:.3s}.eq span:nth-child(5){animation-delay:.15s}
+  @keyframes b { 0%,100%{height:6px} 50%{height:26px} }
+  .opts { display:grid; gap:10px; }
+  .opt { text-align:left; background:#20123f; border:1px solid var(--line); color:var(--txt);
+      padding:14px 16px; border-radius:12px; font-size:15px; cursor:pointer; transition:background .15s,border-color .15s; }
+  .opt:hover:not([disabled]) { background:#2a1852; border-color:var(--fuchsia); }
+  .opt[disabled] { cursor:default; }
+  .opt.ok { background:rgba(34,197,94,.16); border-color:var(--ok); }
+  .opt.bad { background:rgba(239,68,68,.16); border-color:var(--bad); }
+  .reveal { margin-top:18px; padding:16px; border-radius:12px; background:#12082a; border:1px solid var(--line); }
+  .reveal .orig { font-weight:600; }
+  .reveal .cov { color:var(--muted); font-size:13px; margin-top:2px; }
+  .reveal .fact { font-size:14px; color:var(--txt); margin-top:8px; }
+  .next { margin-top:16px; width:100%; border:none; cursor:pointer; border-radius:12px; padding:14px;
+      font-weight:600; color:#fff; background:#3a2170; }
+  .next:hover { background:#48298a; }
+  .hidden { display:none; }
+  .result { text-align:center; }
+  .score { font-size:40px; font-weight:700; margin:10px 0; }
+  .err { color:#fca5a5; font-size:13px; margin-top:8px; min-height:16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <span class="badge">Prototyp · Finska humppacovers</span>
+  <h1>Vilken låt är det egentligen?</h1>
+  <div class="sub">Lyssna på humppacovern (5 sek) och gissa originalet.</div>
+  <div class="card" id="card"></div>
+</div>
+<script>
+const QUESTIONS = __DATA__;
+const ROUND = 10;                 // frågor per omgång (slumpas ur banken)
+let pool = [], i = 0, score = 0, audio = null;
+const cache = {};
+
+function shuffle(a){ a=a.slice(); for(let j=a.length-1;j>0;j--){const k=Math.floor(Math.random()*(j+1));[a[j],a[k]]=[a[k],a[j]];} return a; }
+
+function itunes(term){
+  if(cache[term]) return Promise.resolve(cache[term]);
+  return new Promise((res,rej)=>{
+    const cb='itcb_'+Math.random().toString(36).slice(2);
+    const s=document.createElement('script');
+    const to=setTimeout(()=>{cleanup();rej(new Error('timeout'));},8000);
+    function cleanup(){clearTimeout(to);delete window[cb];s.remove();}
+    window[cb]=(d)=>{const r=(d.results||[]);
+      const hit=r.find(x=>/eläkeläiset/i.test(x.artistName||'')&&x.previewUrl)||r.find(x=>x.previewUrl);
+      cache[term]=hit?hit.previewUrl:null; cleanup(); res(cache[term]);};
+    s.onerror=()=>{cleanup();rej(new Error('nätverk'));};
+    s.src=`https://itunes.apple.com/search?term=${encodeURIComponent(term)}&entity=song&limit=5&country=fi&callback=${cb}`;
+    document.body.appendChild(s);
+  });
+}
+
+function stopAudio(){ if(audio){audio.pause();audio=null;} document.querySelector('.eq')?.classList.remove('playing'); }
+
+async function play(q, btn, eq, err){
+  err.textContent=''; btn.disabled=true; btn.textContent='Laddar…';
+  try{
+    const url=await itunes(q.query);
+    if(!url){ err.textContent='Hittade ingen preview för denna cover.'; btn.disabled=false; btn.textContent='▶ Spela igen'; return; }
+    stopAudio(); audio=new Audio(url); eq.classList.add('playing');
+    await audio.play();
+    btn.textContent='▶ Spela igen';
+    setTimeout(()=>{ stopAudio(); btn.disabled=false; }, 5000);
+  }catch(e){ err.textContent='Kunde inte spela ('+e.message+').'; btn.disabled=false; btn.textContent='▶ Spela'; eq.classList.remove('playing'); }
+}
+
+function render(){
+  const card=document.getElementById('card');
+  if(i>=pool.length){ return renderResult(card); }
+  const q=pool[i];
+  const opts=shuffle(q.options);
+  card.innerHTML=`
+    <div class="progress"><span>Fråga ${i+1} / ${pool.length}</span><span>Poäng: ${score}</span></div>
+    <button class="play">▶ Spela (5 sek)</button>
+    <div class="eq"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="err"></div>
+    <div class="opts">${opts.map(o=>`<button class="opt" data-o="${encodeURIComponent(o)}">${o}</button>`).join('')}</div>
+    <div class="reveal hidden"></div>
+    <button class="next hidden">Nästa →</button>`;
+  const playBtn=card.querySelector('.play'), eq=card.querySelector('.eq'), err=card.querySelector('.err');
+  playBtn.onclick=()=>play(q,playBtn,eq,err);
+  card.querySelectorAll('.opt').forEach(b=>{
+    b.onclick=()=>{
+      const chosen=decodeURIComponent(b.dataset.o);
+      const correct=chosen===q.answer;
+      if(correct) score++;
+      stopAudio();
+      card.querySelectorAll('.opt').forEach(x=>{ x.disabled=true;
+        const val=decodeURIComponent(x.dataset.o);
+        if(val===q.answer) x.classList.add('ok');
+        else if(val===chosen) x.classList.add('bad'); });
+      const rev=card.querySelector('.reveal');
+      rev.innerHTML=`<div class="orig">${correct?'✅ Rätt!':'❌ Fel'} — ${q.orig}</div>
+        <div class="cov">Humppacover: ${q.coverArtist} – ${q.cover}</div>
+        <div class="fact">${q.fact}</div>`;
+      rev.classList.remove('hidden');
+      const next=card.querySelector('.next'); next.classList.remove('hidden');
+      next.onclick=()=>{ i++; render(); };
+    };
+  });
+}
+
+function renderResult(card){
+  card.innerHTML=`<div class="result">
+    <div class="sub">Omgång klar</div>
+    <div class="score">${score} / ${pool.length}</div>
+    <button class="next" style="max-width:220px;margin:0 auto;">🔀 Ny omgång</button></div>`;
+  card.querySelector('.next').onclick=start;
+}
+
+function start(){ pool=shuffle(QUESTIONS).slice(0,Math.min(ROUND,QUESTIONS.length)); i=0; score=0; render(); }
+start();
+</script>
+</body>
+</html>

@@ -92,6 +92,7 @@ TuneTrivia/
 ├── frontend/            ← (planeras) React + Vite-app (portas från Base44)
 ├── backend/             ← Node-API + Postgres (migrations/), tools/ (författarhjälp)
 ├── data/questions/      ← temabaserad frågebank (JSON per tema + index.json)
+├── prototypes/          ← kastbara koncept-demos (ej produktionskod)
 ├── docs/                ← game-design.md, db-schema, api, deploy
 └── tests/               ← testsuite (npm test)
 ```

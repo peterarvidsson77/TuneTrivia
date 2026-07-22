@@ -1,6 +1,16 @@
 {
   "versions": [
     {
+      "version": "v0.4.2",
+      "date": "2026-07-22",
+      "label": "Prototyp: humppacover-spelare",
+      "changes": [
+        "prototypes/finskcover-player.html: spelbar demo av cover_original-flödet (spela 5 sek humppacover → gissa originalet), slumpar 10 frågor/omgång.",
+        "Ljud via live iTunes-uppslag (JSONP) på audio.query — samma mekanism som riktiga appen ska använda. Röktestad: uppslag + rendering verifierade.",
+        "Reproducerbart bygge: prototypes/template.html + build.py genererar HTML från finskcover.json."
+      ]
+    },
+    {
       "version": "v0.4.1",
       "date": "2026-07-22",
       "label": "Tema: Finska humppacovers",
