@@ -1,0 +1,9 @@
+{
+  "version": "v0.1.0",
+  "date": "2026-07-22",
+  "label": "Projektstart",
+  "changes": [
+    "Scaffold uppsatt: CLAUDE.md ifylld (Node + WebSockets + Postgres, ytor Host/Spelare/Admin), versionsdisciplin, learning-capture-skill.",
+    "Node-baslinje: package.json, .gitignore, .env.example, docs/-mapp."
+  ]
+}
