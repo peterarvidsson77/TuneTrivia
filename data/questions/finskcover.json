@@ -1,0 +1,529 @@
+{
+  "id": "finskcover",
+  "name": "Finska humppacovers",
+  "description": "Eläkeläiset humppafierar kända hits — gissa originallåten.",
+  "questions": [
+    {
+      "id": "finskcover-001",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Humppaa Suomesta",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Livin' on a Prayer",
+        "artist": "Bon Jovi",
+        "year": 1986
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Livin' on a Prayer",
+      "options": [
+        "Livin' on a Prayer",
+        "Here I Go Again",
+        "Pour Some Sugar on Me",
+        "I Want to Know What Love Is"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Humppaa Suomesta"
+      },
+      "fact": "Bon Jovis anthem från 1986 om Tommy och Gina — humppafierad av Eläkeläiset.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-002",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Elan humpalla",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Like a Virgin",
+        "artist": "Madonna",
+        "year": 1984
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Like a Virgin",
+      "options": [
+        "Like a Virgin",
+        "Girls Just Want to Have Fun",
+        "Time After Time",
+        "Take On Me"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Elan humpalla"
+      },
+      "fact": "Madonnas genombrottshit 1984.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-003",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Humppaneitsyt",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Kung Fu Fighting",
+        "artist": "Carl Douglas",
+        "year": 1974
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Kung Fu Fighting",
+      "options": [
+        "Kung Fu Fighting",
+        "Y.M.C.A.",
+        "Stayin' Alive",
+        "Rasputin"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Humppaneitsyt"
+      },
+      "fact": "Carl Douglas discoplåga från 1974.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-004",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Kuusessa hevon",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Suspicious Minds",
+        "artist": "Elvis Presley",
+        "year": 1969
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Suspicious Minds",
+      "options": [
+        "Suspicious Minds",
+        "Jailhouse Rock",
+        "Hound Dog",
+        "Blue Suede Shoes"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Kuusessa hevon"
+      },
+      "fact": "En av Elvis sista stora listettor, 1969.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-005",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Lierohumppa",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Barbie Girl",
+        "artist": "Aqua",
+        "year": 1997
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Barbie Girl",
+      "options": [
+        "Barbie Girl",
+        "Cotton Eye Joe",
+        "Blue (Da Ba Dee)",
+        "Mambo No. 5"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Lierohumppa"
+      },
+      "fact": "Danska Aquas globala genombrott 1997.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-006",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Humppabarbi",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Let It Be",
+        "artist": "The Beatles",
+        "year": 1970
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Let It Be",
+      "options": [
+        "Let It Be",
+        "Hey Jude",
+        "Yesterday",
+        "Bohemian Rhapsody"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Humppabarbi"
+      },
+      "fact": "The Beatles titelspår från 1970.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-007",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Humppa hallelujaa",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Hard Rock Hallelujah",
+        "artist": "Lordi",
+        "year": 2006
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Hard Rock Hallelujah",
+      "options": [
+        "Hard Rock Hallelujah",
+        "Euphoria",
+        "Waterloo",
+        "Heroes"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Humppa hallelujaa"
+      },
+      "fact": "Finländska Lordi vann Eurovision 2006 — passande humppamaterial.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-008",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Kulumaton Humppa",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Can't Get You Out of My Head",
+        "artist": "Kylie Minogue",
+        "year": 2001
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Can't Get You Out of My Head",
+      "options": [
+        "Can't Get You Out of My Head",
+        "Toxic",
+        "Believe",
+        "Around the World"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Kulumaton Humppa"
+      },
+      "fact": "Kylie Minogues 'la la la'-hit från 2001.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-009",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Hävisin Lotossa Taas",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "My Favourite Game",
+        "artist": "The Cardigans",
+        "year": 1998
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "My Favourite Game",
+      "options": [
+        "My Favourite Game",
+        "Lovefool",
+        "Erase/Rewind",
+        "Bittersweet Symphony"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Hävisin Lotossa Taas"
+      },
+      "fact": "Svenska The Cardigans, 1998.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-010",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Jääkärihumppa",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "The Final Countdown",
+        "artist": "Europe",
+        "year": 1986
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "The Final Countdown",
+      "options": [
+        "The Final Countdown",
+        "Carrie",
+        "The Look",
+        "Africa"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Jääkärihumppa"
+      },
+      "fact": "Svenska Europes syntrock-klassiker 1986.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-011",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Humppaukaasi",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "We Will Rock You",
+        "artist": "Queen",
+        "year": 1977
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "We Will Rock You",
+      "options": [
+        "We Will Rock You",
+        "We Are the Champions",
+        "Smoke on the Water",
+        "Highway to Hell"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Humppaukaasi"
+      },
+      "fact": "Queens stamp-stamp-clap-anthem från 1977.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-012",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Dementikon keppihumppa",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "I Was Made for Lovin' You",
+        "artist": "KISS",
+        "year": 1979
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "I Was Made for Lovin' You",
+      "options": [
+        "I Was Made for Lovin' You",
+        "Rock and Roll All Nite",
+        "Paradise City",
+        "You Shook Me All Night Long"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Dementikon keppihumppa"
+      },
+      "fact": "KISS discoinfluerade hit 1979.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-013",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Ranttalihumppa",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Run to the Hills",
+        "artist": "Iron Maiden",
+        "year": 1982
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Run to the Hills",
+      "options": [
+        "Run to the Hills",
+        "The Trooper",
+        "Paranoid",
+        "Ace of Spades"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Ranttalihumppa"
+      },
+      "fact": "Iron Maiden, 1982.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-014",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Katkaistu humppa",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "The Number of the Beast",
+        "artist": "Iron Maiden",
+        "year": 1982
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "The Number of the Beast",
+      "options": [
+        "The Number of the Beast",
+        "Fear of the Dark",
+        "Hallowed Be Thy Name",
+        "Master of Puppets"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Katkaistu humppa"
+      },
+      "fact": "Titelspåret på Iron Maidens album från 1982.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-015",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Tervetuloa mehtään",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Welcome to the Jungle",
+        "artist": "Guns N' Roses",
+        "year": 1987
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Welcome to the Jungle",
+      "options": [
+        "Welcome to the Jungle",
+        "Sweet Child o' Mine",
+        "Paradise City",
+        "Enter Sandman"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Tervetuloa mehtään"
+      },
+      "fact": "Guns N' Roses från 'Appetite for Destruction' 1987.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-016",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Hump",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Jump",
+        "artist": "Van Halen",
+        "year": 1984
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Jump",
+      "options": [
+        "Jump",
+        "Panama",
+        "Here I Go Again",
+        "Wanted Dead or Alive"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Hump"
+      },
+      "fact": "Van Halens synthdrivna etta 1984.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-017",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Pyjamahumppa",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Sleeping in My Car",
+        "artist": "Roxette",
+        "year": 1994
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Sleeping in My Car",
+      "options": [
+        "Sleeping in My Car",
+        "Joyride",
+        "It Must Have Been Love",
+        "The Look"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Pyjamahumppa"
+      },
+      "fact": "Svenska Roxette, 1994.",
+      "difficulty": 3
+    },
+    {
+      "id": "finskcover-018",
+      "theme": "finskcover",
+      "type": "cover_original",
+      "cover": {
+        "title": "Humpan alla",
+        "artist": "Eläkeläiset",
+        "lang": "fi"
+      },
+      "song": {
+        "title": "Under the Bridge",
+        "artist": "Red Hot Chili Peppers",
+        "year": 1992
+      },
+      "prompt": "Lyssna på humppacovern – vilken låt är det egentligen?",
+      "answer": "Under the Bridge",
+      "options": [
+        "Under the Bridge",
+        "Californication",
+        "Give It Away",
+        "Losing My Religion"
+      ],
+      "audio": {
+        "provider": "itunes",
+        "query": "Eläkeläiset Humpan alla"
+      },
+      "fact": "Red Hot Chili Peppers, från albumet 'Blood Sugar Sex Magik' (1991).",
+      "difficulty": 3
+    }
+  ]
+}

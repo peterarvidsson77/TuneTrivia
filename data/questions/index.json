@@ -8,6 +8,27 @@
       "file": "80tal.json"
     },
     {
+      "id": "filmtv",
+      "name": "Film & TV",
+      "description": "Låtar från film och TV.",
+      "count": 10,
+      "file": "filmtv.json"
+    },
+    {
+      "id": "finskcover",
+      "name": "Finska humppacovers",
+      "description": "Eläkeläiset humppafierar kända hits — gissa originallåten.",
+      "count": 18,
+      "file": "finskcover.json"
+    },
+    {
+      "id": "mello",
+      "name": "Melodifestivalen",
+      "description": "Svenska bidrag och Eurovision-vinnare.",
+      "count": 8,
+      "file": "mello.json"
+    },
+    {
       "id": "onehit",
       "name": "One-hit wonders",
       "description": "Artister mest kända för en enda stor hit.",
@@ -20,21 +41,7 @@
       "description": "Svenska artister och klassiker.",
       "count": 10,
       "file": "svenska.json"
-    },
-    {
-      "id": "filmtv",
-      "name": "Film & TV",
-      "description": "Låtar från film och TV.",
-      "count": 10,
-      "file": "filmtv.json"
-    },
-    {
-      "id": "mello",
-      "name": "Melodifestivalen",
-      "description": "Svenska bidrag och Eurovision-vinnare.",
-      "count": 8,
-      "file": "mello.json"
     }
   ],
-  "total_questions": 48
+  "total_questions": 66
 }

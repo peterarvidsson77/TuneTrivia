@@ -1,6 +1,16 @@
 {
   "versions": [
     {
+      "version": "v0.4.1",
+      "date": "2026-07-22",
+      "label": "Tema: Finska humppacovers",
+      "changes": [
+        "Nytt tema finskcover: 18 cover_original-frågor (Eläkeläiset humppacovers → gissa originalet), byggda från användarens Spotify-lista.",
+        "Alla covers verifierade tillgängliga på iTunes med preview; originalår korrigerade (Spotify-remaster-år ignorerade).",
+        "Frågebanken totalt 66 frågor i 6 teman; index.json regenererad."
+      ]
+    },
+    {
       "version": "v0.4.0",
       "date": "2026-07-22",
       "label": "Författarhjälp + cover-frågetyp",
