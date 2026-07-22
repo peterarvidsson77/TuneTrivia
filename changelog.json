@@ -1,6 +1,16 @@
 {
   "versions": [
     {
+      "version": "v0.4.3",
+      "date": "2026-07-22",
+      "label": "Prototyp: längre klipp + längd-väljare",
+      "changes": [
+        "Höjde default spellängd 5→15 sek (5 sek var för kort) i prototypen.",
+        "Lade till längd-väljare (5/10/15/30 sek) för att dialla in rätt känsla live. Vinnande längd blir config-default i riktiga appen.",
+        "template.html uppdaterad, HTML regenererad, verifierad i webbläsare."
+      ]
+    },
+    {
       "version": "v0.4.2",
       "date": "2026-07-22",
       "label": "Prototyp: humppacover-spelare",

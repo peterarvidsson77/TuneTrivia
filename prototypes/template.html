@@ -27,6 +27,11 @@
       background:linear-gradient(90deg,var(--fuchsia),var(--indigo)); transition:transform .08s, opacity .2s; }
   .play:active { transform:scale(.98); }
   .play[disabled] { opacity:.55; cursor:default; }
+  .lens { display:flex; gap:8px; justify-content:center; margin:10px 0 2px; }
+  .len { background:#20123f; border:1px solid var(--line); color:var(--muted); cursor:pointer;
+      border-radius:999px; padding:5px 14px; font-size:13px; transition:all .15s; }
+  .len:hover { border-color:var(--fuchsia); color:var(--txt); }
+  .len.on { background:linear-gradient(90deg,var(--fuchsia),var(--indigo)); color:#fff; border-color:transparent; }
   .eq { height:26px; display:flex; gap:4px; align-items:flex-end; justify-content:center; margin:12px 0 18px; }
   .eq span { width:5px; background:linear-gradient(var(--fuchsia),var(--indigo)); border-radius:3px; height:6px; }
   .eq.playing span { animation:b .6s ease-in-out infinite; }
@@ -63,6 +68,8 @@
 <script>
 const QUESTIONS = __DATA__;
 const ROUND = 10;                 // frågor per omgång (slumpas ur banken)
+const LENGTHS = [5, 10, 15, 30];  // valbara spellängder (sek)
+let clipMs = 15000;               // default spellängd (config i riktiga appen)
 let pool = [], i = 0, score = 0, audio = null;
 const cache = {};
 
@@ -94,7 +101,7 @@ async function play(q, btn, eq, err){
     stopAudio(); audio=new Audio(url); eq.classList.add('playing');
     await audio.play();
     btn.textContent='▶ Spela igen';
-    setTimeout(()=>{ stopAudio(); btn.disabled=false; }, 5000);
+    setTimeout(()=>{ stopAudio(); btn.disabled=false; }, clipMs);
   }catch(e){ err.textContent='Kunde inte spela ('+e.message+').'; btn.disabled=false; btn.textContent='▶ Spela'; eq.classList.remove('playing'); }
 }
 
@@ -105,7 +112,8 @@ function render(){
   const opts=shuffle(q.options);
   card.innerHTML=`
     <div class="progress"><span>Fråga ${i+1} / ${pool.length}</span><span>Poäng: ${score}</span></div>
-    <button class="play">▶ Spela (5 sek)</button>
+    <button class="play">▶ Spela (${clipMs/1000} sek)</button>
+    <div class="lens">${LENGTHS.map(s=>`<button class="len ${clipMs===s*1000?'on':''}" data-s="${s}">${s}s</button>`).join('')}</div>
     <div class="eq"><span></span><span></span><span></span><span></span><span></span></div>
     <div class="err"></div>
     <div class="opts">${opts.map(o=>`<button class="opt" data-o="${encodeURIComponent(o)}">${o}</button>`).join('')}</div>
@@ -113,6 +121,11 @@ function render(){
     <button class="next hidden">Nästa →</button>`;
   const playBtn=card.querySelector('.play'), eq=card.querySelector('.eq'), err=card.querySelector('.err');
   playBtn.onclick=()=>play(q,playBtn,eq,err);
+  card.querySelectorAll('.len').forEach(b=>b.onclick=()=>{
+    clipMs=Number(b.dataset.s)*1000;
+    card.querySelectorAll('.len').forEach(x=>x.classList.toggle('on', x===b));
+    playBtn.textContent=`▶ Spela (${clipMs/1000} sek)`;
+  });
   card.querySelectorAll('.opt').forEach(b=>{
     b.onclick=()=>{
       const chosen=decodeURIComponent(b.dataset.o);

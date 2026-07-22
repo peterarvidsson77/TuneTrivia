@@ -27,6 +27,11 @@
       background:linear-gradient(90deg,var(--fuchsia),var(--indigo)); transition:transform .08s, opacity .2s; }
   .play:active { transform:scale(.98); }
   .play[disabled] { opacity:.55; cursor:default; }
+  .lens { display:flex; gap:8px; justify-content:center; margin:10px 0 2px; }
+  .len { background:#20123f; border:1px solid var(--line); color:var(--muted); cursor:pointer;
+      border-radius:999px; padding:5px 14px; font-size:13px; transition:all .15s; }
+  .len:hover { border-color:var(--fuchsia); color:var(--txt); }
+  .len.on { background:linear-gradient(90deg,var(--fuchsia),var(--indigo)); color:#fff; border-color:transparent; }
   .eq { height:26px; display:flex; gap:4px; align-items:flex-end; justify-content:center; margin:12px 0 18px; }
   .eq span { width:5px; background:linear-gradient(var(--fuchsia),var(--indigo)); border-radius:3px; height:6px; }
   .eq.playing span { animation:b .6s ease-in-out infinite; }
@@ -63,6 +68,8 @@
 <script>
 const QUESTIONS = [{"query": "Eläkeläiset Humppaa Suomesta", "cover": "Humppaa Suomesta", "coverArtist": "Eläkeläiset", "answer": "Livin' on a Prayer", "options": ["Livin' on a Prayer", "Here I Go Again", "Pour Some Sugar on Me", "I Want to Know What Love Is"], "orig": "Bon Jovi – Livin' on a Prayer (1986)", "fact": "Bon Jovis anthem från 1986 om Tommy och Gina — humppafierad av Eläkeläiset."}, {"query": "Eläkeläiset Elan humpalla", "cover": "Elan humpalla", "coverArtist": "Eläkeläiset", "answer": "Like a Virgin", "options": ["Like a Virgin", "Girls Just Want to Have Fun", "Time After Time", "Take On Me"], "orig": "Madonna – Like a Virgin (1984)", "fact": "Madonnas genombrottshit 1984."}, {"query": "Eläkeläiset Humppaneitsyt", "cover": "Humppaneitsyt", "coverArtist": "Eläkeläiset", "answer": "Kung Fu Fighting", "options": ["Kung Fu Fighting", "Y.M.C.A.", "Stayin' Alive", "Rasputin"], "orig": "Carl Douglas – Kung Fu Fighting (1974)", "fact": "Carl Douglas discoplåga från 1974."}, {"query": "Eläkeläiset Kuusessa hevon", "cover": "Kuusessa hevon", "coverArtist": "Eläkeläiset", "answer": "Suspicious Minds", "options": ["Suspicious Minds", "Jailhouse Rock", "Hound Dog", "Blue Suede Shoes"], "orig": "Elvis Presley – Suspicious Minds (1969)", "fact": "En av Elvis sista stora listettor, 1969."}, {"query": "Eläkeläiset Lierohumppa", "cover": "Lierohumppa", "coverArtist": "Eläkeläiset", "answer": "Barbie Girl", "options": ["Barbie Girl", "Cotton Eye Joe", "Blue (Da Ba Dee)", "Mambo No. 5"], "orig": "Aqua – Barbie Girl (1997)", "fact": "Danska Aquas globala genombrott 1997."}, {"query": "Eläkeläiset Humppabarbi", "cover": "Humppabarbi", "coverArtist": "Eläkeläiset", "answer": "Let It Be", "options": ["Let It Be", "Hey Jude", "Yesterday", "Bohemian Rhapsody"], "orig": "The Beatles – Let It Be (1970)", "fact": "The Beatles titelspår från 1970."}, {"query": "Eläkeläiset Humppa hallelujaa", "cover": "Humppa hallelujaa", "coverArtist": "Eläkeläiset", "answer": "Hard Rock Hallelujah", "options": ["Hard Rock Hallelujah", "Euphoria", "Waterloo", "Heroes"], "orig": "Lordi – Hard Rock Hallelujah (2006)", "fact": "Finländska Lordi vann Eurovision 2006 — passande humppamaterial."}, {"query": "Eläkeläiset Kulumaton Humppa", "cover": "Kulumaton Humppa", "coverArtist": "Eläkeläiset", "answer": "Can't Get You Out of My Head", "options": ["Can't Get You Out of My Head", "Toxic", "Believe", "Around the World"], "orig": "Kylie Minogue – Can't Get You Out of My Head (2001)", "fact": "Kylie Minogues 'la la la'-hit från 2001."}, {"query": "Eläkeläiset Hävisin Lotossa Taas", "cover": "Hävisin Lotossa Taas", "coverArtist": "Eläkeläiset", "answer": "My Favourite Game", "options": ["My Favourite Game", "Lovefool", "Erase/Rewind", "Bittersweet Symphony"], "orig": "The Cardigans – My Favourite Game (1998)", "fact": "Svenska The Cardigans, 1998."}, {"query": "Eläkeläiset Jääkärihumppa", "cover": "Jääkärihumppa", "coverArtist": "Eläkeläiset", "answer": "The Final Countdown", "options": ["The Final Countdown", "Carrie", "The Look", "Africa"], "orig": "Europe – The Final Countdown (1986)", "fact": "Svenska Europes syntrock-klassiker 1986."}, {"query": "Eläkeläiset Humppaukaasi", "cover": "Humppaukaasi", "coverArtist": "Eläkeläiset", "answer": "We Will Rock You", "options": ["We Will Rock You", "We Are the Champions", "Smoke on the Water", "Highway to Hell"], "orig": "Queen – We Will Rock You (1977)", "fact": "Queens stamp-stamp-clap-anthem från 1977."}, {"query": "Eläkeläiset Dementikon keppihumppa", "cover": "Dementikon keppihumppa", "coverArtist": "Eläkeläiset", "answer": "I Was Made for Lovin' You", "options": ["I Was Made for Lovin' You", "Rock and Roll All Nite", "Paradise City", "You Shook Me All Night Long"], "orig": "KISS – I Was Made for Lovin' You (1979)", "fact": "KISS discoinfluerade hit 1979."}, {"query": "Eläkeläiset Ranttalihumppa", "cover": "Ranttalihumppa", "coverArtist": "Eläkeläiset", "answer": "Run to the Hills", "options": ["Run to the Hills", "The Trooper", "Paranoid", "Ace of Spades"], "orig": "Iron Maiden – Run to the Hills (1982)", "fact": "Iron Maiden, 1982."}, {"query": "Eläkeläiset Katkaistu humppa", "cover": "Katkaistu humppa", "coverArtist": "Eläkeläiset", "answer": "The Number of the Beast", "options": ["The Number of the Beast", "Fear of the Dark", "Hallowed Be Thy Name", "Master of Puppets"], "orig": "Iron Maiden – The Number of the Beast (1982)", "fact": "Titelspåret på Iron Maidens album från 1982."}, {"query": "Eläkeläiset Tervetuloa mehtään", "cover": "Tervetuloa mehtään", "coverArtist": "Eläkeläiset", "answer": "Welcome to the Jungle", "options": ["Welcome to the Jungle", "Sweet Child o' Mine", "Paradise City", "Enter Sandman"], "orig": "Guns N' Roses – Welcome to the Jungle (1987)", "fact": "Guns N' Roses från 'Appetite for Destruction' 1987."}, {"query": "Eläkeläiset Hump", "cover": "Hump", "coverArtist": "Eläkeläiset", "answer": "Jump", "options": ["Jump", "Panama", "Here I Go Again", "Wanted Dead or Alive"], "orig": "Van Halen – Jump (1984)", "fact": "Van Halens synthdrivna etta 1984."}, {"query": "Eläkeläiset Pyjamahumppa", "cover": "Pyjamahumppa", "coverArtist": "Eläkeläiset", "answer": "Sleeping in My Car", "options": ["Sleeping in My Car", "Joyride", "It Must Have Been Love", "The Look"], "orig": "Roxette – Sleeping in My Car (1994)", "fact": "Svenska Roxette, 1994."}, {"query": "Eläkeläiset Humpan alla", "cover": "Humpan alla", "coverArtist": "Eläkeläiset", "answer": "Under the Bridge", "options": ["Under the Bridge", "Californication", "Give It Away", "Losing My Religion"], "orig": "Red Hot Chili Peppers – Under the Bridge (1992)", "fact": "Red Hot Chili Peppers, från albumet 'Blood Sugar Sex Magik' (1991)."}];
 const ROUND = 10;                 // frågor per omgång (slumpas ur banken)
+const LENGTHS = [5, 10, 15, 30];  // valbara spellängder (sek)
+let clipMs = 15000;               // default spellängd (config i riktiga appen)
 let pool = [], i = 0, score = 0, audio = null;
 const cache = {};
 
@@ -94,7 +101,7 @@ async function play(q, btn, eq, err){
     stopAudio(); audio=new Audio(url); eq.classList.add('playing');
     await audio.play();
     btn.textContent='▶ Spela igen';
-    setTimeout(()=>{ stopAudio(); btn.disabled=false; }, 5000);
+    setTimeout(()=>{ stopAudio(); btn.disabled=false; }, clipMs);
   }catch(e){ err.textContent='Kunde inte spela ('+e.message+').'; btn.disabled=false; btn.textContent='▶ Spela'; eq.classList.remove('playing'); }
 }
 
@@ -105,7 +112,8 @@ function render(){
   const opts=shuffle(q.options);
   card.innerHTML=`
     <div class="progress"><span>Fråga ${i+1} / ${pool.length}</span><span>Poäng: ${score}</span></div>
-    <button class="play">▶ Spela (5 sek)</button>
+    <button class="play">▶ Spela (${clipMs/1000} sek)</button>
+    <div class="lens">${LENGTHS.map(s=>`<button class="len ${clipMs===s*1000?'on':''}" data-s="${s}">${s}s</button>`).join('')}</div>
     <div class="eq"><span></span><span></span><span></span><span></span><span></span></div>
     <div class="err"></div>
     <div class="opts">${opts.map(o=>`<button class="opt" data-o="${encodeURIComponent(o)}">${o}</button>`).join('')}</div>
@@ -113,6 +121,11 @@ function render(){
     <button class="next hidden">Nästa →</button>`;
   const playBtn=card.querySelector('.play'), eq=card.querySelector('.eq'), err=card.querySelector('.err');
   playBtn.onclick=()=>play(q,playBtn,eq,err);
+  card.querySelectorAll('.len').forEach(b=>b.onclick=()=>{
+    clipMs=Number(b.dataset.s)*1000;
+    card.querySelectorAll('.len').forEach(x=>x.classList.toggle('on', x===b));
+    playBtn.textContent=`▶ Spela (${clipMs/1000} sek)`;
+  });
   card.querySelectorAll('.opt').forEach(b=>{
     b.onclick=()=>{
       const chosen=decodeURIComponent(b.dataset.o);

@@ -1,10 +1,10 @@
 {
-  "version": "v0.4.2",
+  "version": "v0.4.3",
   "date": "2026-07-22",
-  "label": "Prototyp: humppacover-spelare",
+  "label": "Prototyp: längre klipp + längd-väljare",
   "changes": [
-    "prototypes/finskcover-player.html: spelbar demo av cover_original-flödet (spela 5 sek humppacover → gissa originalet), slumpar 10 frågor/omgång.",
-    "Ljud via live iTunes-uppslag (JSONP) på audio.query — samma mekanism som riktiga appen ska använda. Röktestad: uppslag + rendering verifierade.",
-    "Reproducerbart bygge: prototypes/template.html + build.py genererar HTML från finskcover.json."
+    "Höjde default spellängd 5→15 sek (5 sek var för kort) i prototypen.",
+    "Lade till längd-väljare (5/10/15/30 sek) för att dialla in rätt känsla live. Vinnande längd blir config-default i riktiga appen.",
+    "template.html uppdaterad, HTML regenererad, verifierad i webbläsare."
   ]
 }
