@@ -34,7 +34,9 @@ Appen har fyra faser: **Intro → Registrering → Spel → Resultat**.
   - **One-hit wonder** (`one_hit_wonder`) — vem låg bakom hiten?
   - **Film & TV** (`which_film`) — från vilken film/serie?
   - **Saknat ord** (`missing_word`) — komplettera **titeln** (aldrig låttext).
-  - **Lyssna & gissa** (`listen_guess`) — spela ljud och gissa.
+  - **Lyssna & gissa** (`listen_guess`) — spela ljud och gissa låten.
+  - **Cover → original** (`cover_original`) — spela en cover (t.ex. finsk version)
+    och gissa vad låten heter i original. Idé från användaren.
 - **Ljud:** iTunes Search API ger 30-sek previews. Spelas **max ~5 sek** så
   låtnamnet inte avslöjas. Animerad spelare med equalizer-staplar.
 - **Copyright:** ingen sångtext återges någonstans — se `data/questions/README.md`.

@@ -1,11 +1,10 @@
 {
-  "version": "v0.3.1",
+  "version": "v0.4.0",
   "date": "2026-07-22",
-  "label": "Verifierat mot Base44-preview",
+  "label": "Författarhjälp + cover-frågetyp",
   "changes": [
-    "Granskade kompisens Base44-preview: frågor hårdkodade i JS-bundeln, schema {decade,type,question,options,correct,fact,audio?}, 50 frågor per årtionde.",
-    "Beslut: behåll vårt rikare frågeschema (frontend anpassas vid port); ljud via live iTunes-uppslag (ej hårdkodade URL:er).",
-    "Bekräftat: leaderboard-API (HighScore?sort=-score&limit=50) matchar api.md, ingen auth behövs, words/plats-frågor återger låttext (kopieras ej).",
-    "game-design.md + api.md uppdaterade med verifierade fynd och portbeslut."
+    "backend/tools/itunes-search.mjs: CLI som slår upp iTunes Search API och listar kandidatspår med preview-URL (byggblock för ljudfrågor). Verifierad live.",
+    "Ny frågetyp cover_original: spela en cover (t.ex. finsk version) och gissa originalet — idé från användaren.",
+    "Schema utökat med cover-fält och audio.query för både listen_guess och cover_original; dokumenterat i data/questions/README.md och game-design.md."
   ]
 }

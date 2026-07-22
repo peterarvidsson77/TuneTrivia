@@ -40,13 +40,14 @@ eller blandat) → hög omspelbarhet. Detta ersätter idén om 50 frågor i fast
 |------|-------|
 | `id` | unikt, `<tema>-NNN` |
 | `type` | se typer nedan |
-| `song` | `{title, artist, year}` — metadata (även för ljuduppslag) |
+| `song` | `{title, artist, year}` — metadata om **originallåten** (även för ljuduppslag) |
+| `cover` | endast `cover_original`: `{title, artist, lang}` — den **coverversion** som spelas |
 | `prompt` | frågetexten |
 | `answer` | rätt svar — **måste finnas i `options`** |
 | `options` | 4 alternativ. **Appen shufflar** vid visning — lagra i valfri ordning |
 | `fact` | kort fakta efter svar. **Aldrig sångtext** (copyright) |
 | `difficulty` | 1 lätt · 2 medel · 3 svår |
-| `audio` | endast `listen_guess`. Appen hämtar 30-sek preview via iTunes, spelar max ~5 sek |
+| `audio` | `listen_guess` + `cover_original`: `{provider:"itunes", query}`. Appen slår upp 30-sek preview live vid speltid (spelar max ~5 sek). `query` pekar på det som ska höras — för covers: **coverversionen** |
 
 ## Frågetyper
 
@@ -57,7 +58,8 @@ eller blandat) → hög omspelbarhet. Detta ersätter idén om 50 frågor i fast
 | `one_hit_wonder` | Vem gjorde one-hit-wondern? |
 | `which_film` | Från vilken film/serie kommer låten? |
 | `missing_word` | Komplettera **titeln** (aldrig låttext) |
-| `listen_guess` | Lyssna och gissa (kräver `audio`) |
+| `listen_guess` | Lyssna och gissa låten (kräver `audio`) |
+| `cover_original` | Lyssna på en **cover** — vad heter originalet? (kräver `audio` + `cover`) |
 
 ## Hårda regler för innehåll
 
