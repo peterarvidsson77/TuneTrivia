@@ -1,6 +1,16 @@
 {
   "versions": [
     {
+      "version": "v0.5.0",
+      "date": "2026-07-22",
+      "label": "Frågebank batch 2 — årtionden + hiphop",
+      "changes": [
+        "5 nya teman (70-tal, 90-tal, 2000-tal, 2010-tal, Hiphop) med 10 frågor styck = 50 nya frågor.",
+        "Frågebanken totalt 116 frågor i 11 teman; index.json regenererad.",
+        "Högkonfident material, copyright-säkert (titlar/artist/år, ingen låttext), samma schema; rätt svar valideras finnas i options."
+      ]
+    },
+    {
       "version": "v0.4.3",
       "date": "2026-07-22",
       "label": "Prototyp: längre klipp + längd-väljare",

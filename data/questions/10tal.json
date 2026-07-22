@@ -1,0 +1,211 @@
+{
+  "id": "10tal",
+  "name": "2010-talet",
+  "description": "Internationella hits från 2010-talet.",
+  "questions": [
+    {
+      "id": "10tal-001",
+      "theme": "10tal",
+      "type": "year",
+      "song": {
+        "title": "Rolling in the Deep",
+        "artist": "Adele",
+        "year": 2010
+      },
+      "prompt": "Vilket år släpptes Adeles \"Rolling in the Deep\"?",
+      "answer": "2010",
+      "options": [
+        "2010",
+        "2009",
+        "2011",
+        "2012"
+      ],
+      "fact": "Ledande singel från Adeles album '21'.",
+      "difficulty": 2
+    },
+    {
+      "id": "10tal-002",
+      "theme": "10tal",
+      "type": "year",
+      "song": {
+        "title": "Get Lucky",
+        "artist": "Daft Punk",
+        "year": 2013
+      },
+      "prompt": "Vilket år släpptes Daft Punks \"Get Lucky\"?",
+      "answer": "2013",
+      "options": [
+        "2013",
+        "2011",
+        "2012",
+        "2014"
+      ],
+      "fact": "Daft Punk med Pharrell Williams och Nile Rodgers.",
+      "difficulty": 2
+    },
+    {
+      "id": "10tal-003",
+      "theme": "10tal",
+      "type": "year",
+      "song": {
+        "title": "Uptown Funk",
+        "artist": "Mark Ronson",
+        "year": 2014
+      },
+      "prompt": "Vilket år släpptes Mark Ronsons \"Uptown Funk\"?",
+      "answer": "2014",
+      "options": [
+        "2014",
+        "2012",
+        "2013",
+        "2015"
+      ],
+      "fact": "Mark Ronson med Bruno Mars — låg veckor som etta.",
+      "difficulty": 2
+    },
+    {
+      "id": "10tal-004",
+      "theme": "10tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Shape of You",
+        "artist": "Ed Sheeran",
+        "year": 2017
+      },
+      "prompt": "Vem ligger bakom \"Shape of You\"?",
+      "answer": "Ed Sheeran",
+      "options": [
+        "Ed Sheeran",
+        "Sam Smith",
+        "Shawn Mendes",
+        "James Arthur"
+      ],
+      "fact": "En av Spotifys mest strömmade låtar någonsin.",
+      "difficulty": 2
+    },
+    {
+      "id": "10tal-005",
+      "theme": "10tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Blinding Lights",
+        "artist": "The Weeknd",
+        "year": 2019
+      },
+      "prompt": "Vem ligger bakom \"Blinding Lights\"?",
+      "answer": "The Weeknd",
+      "options": [
+        "The Weeknd",
+        "Bruno Mars",
+        "Usher",
+        "Frank Ocean"
+      ],
+      "fact": "80-talsinspirerad synthpop.",
+      "difficulty": 2
+    },
+    {
+      "id": "10tal-006",
+      "theme": "10tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Happy",
+        "artist": "Pharrell Williams",
+        "year": 2013
+      },
+      "prompt": "Vem ligger bakom \"Happy\"?",
+      "answer": "Pharrell Williams",
+      "options": [
+        "Pharrell Williams",
+        "will.i.am",
+        "Bruno Mars",
+        "CeeLo Green"
+      ],
+      "fact": "Från filmen 'Despicable Me 2'.",
+      "difficulty": 2
+    },
+    {
+      "id": "10tal-007",
+      "theme": "10tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Somebody That I Used to Know",
+        "artist": "Gotye",
+        "year": 2011
+      },
+      "prompt": "Vem ligger bakom \"Somebody That I Used to Know\"?",
+      "answer": "Gotye",
+      "options": [
+        "Gotye",
+        "Passenger",
+        "Milky Chance",
+        "MGMT"
+      ],
+      "fact": "Belgisk-australisk hit med Kimbra.",
+      "difficulty": 2
+    },
+    {
+      "id": "10tal-008",
+      "theme": "10tal",
+      "type": "missing_word",
+      "song": {
+        "title": "Shake It Off",
+        "artist": "Taylor Swift",
+        "year": 2014
+      },
+      "prompt": "Komplettera titeln: \"Shake It ___\" (Taylor Swift)",
+      "answer": "Off",
+      "options": [
+        "Off",
+        "Up",
+        "Out",
+        "Loose"
+      ],
+      "fact": "Taylor Swifts övergång till ren pop.",
+      "difficulty": 2
+    },
+    {
+      "id": "10tal-009",
+      "theme": "10tal",
+      "type": "missing_word",
+      "song": {
+        "title": "Call Me Maybe",
+        "artist": "Carly Rae Jepsen",
+        "year": 2012
+      },
+      "prompt": "Komplettera titeln: \"Call Me ___\" (Carly Rae Jepsen)",
+      "answer": "Maybe",
+      "options": [
+        "Maybe",
+        "Now",
+        "Later",
+        "Baby"
+      ],
+      "fact": "Carly Rae Jepsens virala sommarhit.",
+      "difficulty": 2
+    },
+    {
+      "id": "10tal-010",
+      "theme": "10tal",
+      "type": "listen_guess",
+      "song": {
+        "title": "Get Lucky",
+        "artist": "Daft Punk",
+        "year": 2013
+      },
+      "prompt": "Lyssna – vilken låt är detta?",
+      "answer": "Get Lucky",
+      "options": [
+        "Get Lucky",
+        "One More Time",
+        "Around the World",
+        "Instant Crush"
+      ],
+      "fact": "Discofunk som definierade sommaren 2013.",
+      "difficulty": 3,
+      "audio": {
+        "provider": "itunes",
+        "query": "Daft Punk Get Lucky"
+      }
+    }
+  ]
+}

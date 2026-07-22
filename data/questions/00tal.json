@@ -1,0 +1,211 @@
+{
+  "id": "00tal",
+  "name": "2000-talet",
+  "description": "Internationella hits från 2000-talet.",
+  "questions": [
+    {
+      "id": "00tal-001",
+      "theme": "00tal",
+      "type": "year",
+      "song": {
+        "title": "Hey Ya!",
+        "artist": "OutKast",
+        "year": 2003
+      },
+      "prompt": "Vilket år släpptes OutKasts \"Hey Ya!\"?",
+      "answer": "2003",
+      "options": [
+        "2003",
+        "2002",
+        "2004",
+        "2005"
+      ],
+      "fact": "André 3000s energiska hit med 'shake it like a Polaroid'.",
+      "difficulty": 2
+    },
+    {
+      "id": "00tal-002",
+      "theme": "00tal",
+      "type": "year",
+      "song": {
+        "title": "Crazy in Love",
+        "artist": "Beyoncé",
+        "year": 2003
+      },
+      "prompt": "Vilket år släpptes Beyoncés \"Crazy in Love\"?",
+      "answer": "2003",
+      "options": [
+        "2003",
+        "2001",
+        "2002",
+        "2004"
+      ],
+      "fact": "Beyoncés debutsingel med Jay-Z.",
+      "difficulty": 2
+    },
+    {
+      "id": "00tal-003",
+      "theme": "00tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Mr. Brightside",
+        "artist": "The Killers",
+        "year": 2004
+      },
+      "prompt": "Vem ligger bakom \"Mr. Brightside\"?",
+      "answer": "The Killers",
+      "options": [
+        "The Killers",
+        "Franz Ferdinand",
+        "The Strokes",
+        "Kaiser Chiefs"
+      ],
+      "fact": "Från debutalbumet 'Hot Fuss'.",
+      "difficulty": 2
+    },
+    {
+      "id": "00tal-004",
+      "theme": "00tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Seven Nation Army",
+        "artist": "The White Stripes",
+        "year": 2003
+      },
+      "prompt": "Vem ligger bakom \"Seven Nation Army\"?",
+      "answer": "The White Stripes",
+      "options": [
+        "The White Stripes",
+        "The Black Keys",
+        "Kings of Leon",
+        "The Hives"
+      ],
+      "fact": "Riffet blev en global fotbollshymn.",
+      "difficulty": 2
+    },
+    {
+      "id": "00tal-005",
+      "theme": "00tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Umbrella",
+        "artist": "Rihanna",
+        "year": 2007
+      },
+      "prompt": "Vem ligger bakom \"Umbrella\"?",
+      "answer": "Rihanna",
+      "options": [
+        "Rihanna",
+        "Beyoncé",
+        "Ciara",
+        "Nelly Furtado"
+      ],
+      "fact": "'Ella-ella-eh-eh' gjorde Rihanna till superstjärna.",
+      "difficulty": 2
+    },
+    {
+      "id": "00tal-006",
+      "theme": "00tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Hips Don't Lie",
+        "artist": "Shakira",
+        "year": 2006
+      },
+      "prompt": "Vem ligger bakom \"Hips Don't Lie\"?",
+      "answer": "Shakira",
+      "options": [
+        "Shakira",
+        "Jennifer Lopez",
+        "Gwen Stefani",
+        "Nelly Furtado"
+      ],
+      "fact": "En av 2000-talets mest sålda singlar, med Wyclef Jean.",
+      "difficulty": 2
+    },
+    {
+      "id": "00tal-007",
+      "theme": "00tal",
+      "type": "missing_word",
+      "song": {
+        "title": "Poker Face",
+        "artist": "Lady Gaga",
+        "year": 2008
+      },
+      "prompt": "Komplettera titeln: \"Poker ___\" (Lady Gaga)",
+      "answer": "Face",
+      "options": [
+        "Face",
+        "Night",
+        "Star",
+        "Game"
+      ],
+      "fact": "Lady Gagas andra singel från 'The Fame'.",
+      "difficulty": 2
+    },
+    {
+      "id": "00tal-008",
+      "theme": "00tal",
+      "type": "missing_word",
+      "song": {
+        "title": "In Da Club",
+        "artist": "50 Cent",
+        "year": 2003
+      },
+      "prompt": "Komplettera titeln: \"In Da ___\" (50 Cent)",
+      "answer": "Club",
+      "options": [
+        "Club",
+        "Hood",
+        "House",
+        "Zone"
+      ],
+      "fact": "50 Cents genombrott, producerad av Dr. Dre.",
+      "difficulty": 2
+    },
+    {
+      "id": "00tal-009",
+      "theme": "00tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Feel Good Inc.",
+        "artist": "Gorillaz",
+        "year": 2005
+      },
+      "prompt": "Vem ligger bakom \"Feel Good Inc.\"?",
+      "answer": "Gorillaz",
+      "options": [
+        "Gorillaz",
+        "Daft Punk",
+        "Fatboy Slim",
+        "The Prodigy"
+      ],
+      "fact": "Damon Albarns tecknade band, med De La Soul.",
+      "difficulty": 2
+    },
+    {
+      "id": "00tal-010",
+      "theme": "00tal",
+      "type": "listen_guess",
+      "song": {
+        "title": "Mr. Brightside",
+        "artist": "The Killers",
+        "year": 2004
+      },
+      "prompt": "Lyssna – vilken låt är detta?",
+      "answer": "Mr. Brightside",
+      "options": [
+        "Mr. Brightside",
+        "Somebody Told Me",
+        "When You Were Young",
+        "Human"
+      ],
+      "fact": "Låten som aldrig lämnat spellistorna.",
+      "difficulty": 3,
+      "audio": {
+        "provider": "itunes",
+        "query": "The Killers Mr. Brightside"
+      }
+    }
+  ]
+}

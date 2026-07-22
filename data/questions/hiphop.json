@@ -1,0 +1,211 @@
+{
+  "id": "hiphop",
+  "name": "Hiphop",
+  "description": "Klassiker inom hiphop och rap.",
+  "questions": [
+    {
+      "id": "hiphop-001",
+      "theme": "hiphop",
+      "type": "which_artist",
+      "song": {
+        "title": "Lose Yourself",
+        "artist": "Eminem",
+        "year": 2002
+      },
+      "prompt": "Vem ligger bakom \"Lose Yourself\"?",
+      "answer": "Eminem",
+      "options": [
+        "Eminem",
+        "Jay-Z",
+        "Nas",
+        "50 Cent"
+      ],
+      "fact": "Första hiphop-låten att vinna en Oscar.",
+      "difficulty": 2
+    },
+    {
+      "id": "hiphop-002",
+      "theme": "hiphop",
+      "type": "which_artist",
+      "song": {
+        "title": "California Love",
+        "artist": "2Pac",
+        "year": 1995
+      },
+      "prompt": "Vem ligger bakom \"California Love\"?",
+      "answer": "2Pac",
+      "options": [
+        "2Pac",
+        "The Notorious B.I.G.",
+        "Snoop Dogg",
+        "Dr. Dre"
+      ],
+      "fact": "2Pac med Dr. Dre — westcoast-hymn.",
+      "difficulty": 2
+    },
+    {
+      "id": "hiphop-003",
+      "theme": "hiphop",
+      "type": "which_artist",
+      "song": {
+        "title": "Juicy",
+        "artist": "The Notorious B.I.G.",
+        "year": 1994
+      },
+      "prompt": "Vem ligger bakom \"Juicy\"?",
+      "answer": "The Notorious B.I.G.",
+      "options": [
+        "The Notorious B.I.G.",
+        "Jay-Z",
+        "Nas",
+        "Puff Daddy"
+      ],
+      "fact": "Biggies självbiografiska genombrott.",
+      "difficulty": 2
+    },
+    {
+      "id": "hiphop-004",
+      "theme": "hiphop",
+      "type": "which_artist",
+      "song": {
+        "title": "Ms. Jackson",
+        "artist": "OutKast",
+        "year": 2000
+      },
+      "prompt": "Vem ligger bakom \"Ms. Jackson\"?",
+      "answer": "OutKast",
+      "options": [
+        "OutKast",
+        "The Fugees",
+        "A Tribe Called Quest",
+        "Black Eyed Peas"
+      ],
+      "fact": "'I'm sorry Ms. Jackson' — Grammy-vinnare.",
+      "difficulty": 2
+    },
+    {
+      "id": "hiphop-005",
+      "theme": "hiphop",
+      "type": "which_artist",
+      "song": {
+        "title": "Gold Digger",
+        "artist": "Kanye West",
+        "year": 2005
+      },
+      "prompt": "Vem ligger bakom \"Gold Digger\"?",
+      "answer": "Kanye West",
+      "options": [
+        "Kanye West",
+        "Jay-Z",
+        "Lil Wayne",
+        "T.I."
+      ],
+      "fact": "Kanye West med Jamie Foxx.",
+      "difficulty": 2
+    },
+    {
+      "id": "hiphop-006",
+      "theme": "hiphop",
+      "type": "which_artist",
+      "song": {
+        "title": "Empire State of Mind",
+        "artist": "Jay-Z",
+        "year": 2009
+      },
+      "prompt": "Vem ligger bakom \"Empire State of Mind\"?",
+      "answer": "Jay-Z",
+      "options": [
+        "Jay-Z",
+        "Nas",
+        "50 Cent",
+        "Drake"
+      ],
+      "fact": "Hyllning till New York med Alicia Keys.",
+      "difficulty": 2
+    },
+    {
+      "id": "hiphop-007",
+      "theme": "hiphop",
+      "type": "which_artist",
+      "song": {
+        "title": "Rap God",
+        "artist": "Eminem",
+        "year": 2013
+      },
+      "prompt": "Vem ligger bakom \"Rap God\"?",
+      "answer": "Eminem",
+      "options": [
+        "Eminem",
+        "Busta Rhymes",
+        "Twista",
+        "Tech N9ne"
+      ],
+      "fact": "Känd för sin extremt snabba vers.",
+      "difficulty": 2
+    },
+    {
+      "id": "hiphop-008",
+      "theme": "hiphop",
+      "type": "which_artist",
+      "song": {
+        "title": "HUMBLE.",
+        "artist": "Kendrick Lamar",
+        "year": 2017
+      },
+      "prompt": "Vem ligger bakom \"HUMBLE.\"?",
+      "answer": "Kendrick Lamar",
+      "options": [
+        "Kendrick Lamar",
+        "J. Cole",
+        "Drake",
+        "Travis Scott"
+      ],
+      "fact": "Från albumet 'DAMN.' som vann Pulitzerpriset.",
+      "difficulty": 2
+    },
+    {
+      "id": "hiphop-009",
+      "theme": "hiphop",
+      "type": "year",
+      "song": {
+        "title": "Lose Yourself",
+        "artist": "Eminem",
+        "year": 2002
+      },
+      "prompt": "Vilket år släpptes Eminems \"Lose Yourself\"?",
+      "answer": "2002",
+      "options": [
+        "2002",
+        "2000",
+        "2004",
+        "2006"
+      ],
+      "fact": "Ledmotiv till filmen '8 Mile'.",
+      "difficulty": 2
+    },
+    {
+      "id": "hiphop-010",
+      "theme": "hiphop",
+      "type": "listen_guess",
+      "song": {
+        "title": "Ms. Jackson",
+        "artist": "OutKast",
+        "year": 2000
+      },
+      "prompt": "Lyssna – vilken låt är detta?",
+      "answer": "Ms. Jackson",
+      "options": [
+        "Ms. Jackson",
+        "Hey Ya!",
+        "Roses",
+        "The Way You Move"
+      ],
+      "fact": "OutKasts internationella genombrott.",
+      "difficulty": 3,
+      "audio": {
+        "provider": "itunes",
+        "query": "OutKast Ms. Jackson"
+      }
+    }
+  ]
+}

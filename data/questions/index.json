@@ -1,11 +1,39 @@
 {
   "themes": [
     {
+      "id": "00tal",
+      "name": "2000-talet",
+      "description": "Internationella hits från 2000-talet.",
+      "count": 10,
+      "file": "00tal.json"
+    },
+    {
+      "id": "10tal",
+      "name": "2010-talet",
+      "description": "Internationella hits från 2010-talet.",
+      "count": 10,
+      "file": "10tal.json"
+    },
+    {
+      "id": "70tal",
+      "name": "70-talet",
+      "description": "Internationella hits från 1970-talet.",
+      "count": 10,
+      "file": "70tal.json"
+    },
+    {
       "id": "80tal",
       "name": "80-talet",
       "description": "Internationella hits från 1980-talet.",
       "count": 10,
       "file": "80tal.json"
+    },
+    {
+      "id": "90tal",
+      "name": "90-talet",
+      "description": "Internationella hits från 1990-talet.",
+      "count": 10,
+      "file": "90tal.json"
     },
     {
       "id": "filmtv",
@@ -20,6 +48,13 @@
       "description": "Eläkeläiset humppafierar kända hits — gissa originallåten.",
       "count": 18,
       "file": "finskcover.json"
+    },
+    {
+      "id": "hiphop",
+      "name": "Hiphop",
+      "description": "Klassiker inom hiphop och rap.",
+      "count": 10,
+      "file": "hiphop.json"
     },
     {
       "id": "mello",
@@ -43,5 +78,5 @@
       "file": "svenska.json"
     }
   ],
-  "total_questions": 66
+  "total_questions": 116
 }

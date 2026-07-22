@@ -1,0 +1,211 @@
+{
+  "id": "70tal",
+  "name": "70-talet",
+  "description": "Internationella hits från 1970-talet.",
+  "questions": [
+    {
+      "id": "70tal-001",
+      "theme": "70tal",
+      "type": "year",
+      "song": {
+        "title": "Bohemian Rhapsody",
+        "artist": "Queen",
+        "year": 1975
+      },
+      "prompt": "Vilket år släpptes Queens \"Bohemian Rhapsody\"?",
+      "answer": "1975",
+      "options": [
+        "1975",
+        "1973",
+        "1977",
+        "1979"
+      ],
+      "fact": "Queens sexminuters rockopera från albumet 'A Night at the Opera'.",
+      "difficulty": 2
+    },
+    {
+      "id": "70tal-002",
+      "theme": "70tal",
+      "type": "year",
+      "song": {
+        "title": "Imagine",
+        "artist": "John Lennon",
+        "year": 1971
+      },
+      "prompt": "Vilket år släpptes John Lennons \"Imagine\"?",
+      "answer": "1971",
+      "options": [
+        "1971",
+        "1969",
+        "1973",
+        "1975"
+      ],
+      "fact": "John Lennons fredshymn, titelspår på hans andra soloalbum.",
+      "difficulty": 2
+    },
+    {
+      "id": "70tal-003",
+      "theme": "70tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Hotel California",
+        "artist": "Eagles",
+        "year": 1976
+      },
+      "prompt": "Vem ligger bakom \"Hotel California\"?",
+      "answer": "Eagles",
+      "options": [
+        "Eagles",
+        "Fleetwood Mac",
+        "The Doobie Brothers",
+        "America"
+      ],
+      "fact": "Titelspåret på Eagles bästsäljande album.",
+      "difficulty": 2
+    },
+    {
+      "id": "70tal-004",
+      "theme": "70tal",
+      "type": "which_artist",
+      "song": {
+        "title": "I Will Survive",
+        "artist": "Gloria Gaynor",
+        "year": 1978
+      },
+      "prompt": "Vem ligger bakom \"I Will Survive\"?",
+      "answer": "Gloria Gaynor",
+      "options": [
+        "Gloria Gaynor",
+        "Donna Summer",
+        "Diana Ross",
+        "Chaka Khan"
+      ],
+      "fact": "Discohymn som blev en klassisk uppbrottslåt.",
+      "difficulty": 2
+    },
+    {
+      "id": "70tal-005",
+      "theme": "70tal",
+      "type": "which_artist",
+      "song": {
+        "title": "American Pie",
+        "artist": "Don McLean",
+        "year": 1971
+      },
+      "prompt": "Vem ligger bakom \"American Pie\"?",
+      "answer": "Don McLean",
+      "options": [
+        "Don McLean",
+        "James Taylor",
+        "Cat Stevens",
+        "Neil Young"
+      ],
+      "fact": "Åtta minuter lång ballad om 'the day the music died'.",
+      "difficulty": 2
+    },
+    {
+      "id": "70tal-006",
+      "theme": "70tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Y.M.C.A.",
+        "artist": "Village People",
+        "year": 1978
+      },
+      "prompt": "Vem ligger bakom \"Y.M.C.A.\"?",
+      "answer": "Village People",
+      "options": [
+        "Village People",
+        "Bee Gees",
+        "Boney M.",
+        "KC and the Sunshine Band"
+      ],
+      "fact": "Discohit med bokstavskoreografi.",
+      "difficulty": 2
+    },
+    {
+      "id": "70tal-007",
+      "theme": "70tal",
+      "type": "missing_word",
+      "song": {
+        "title": "Stairway to Heaven",
+        "artist": "Led Zeppelin",
+        "year": 1971
+      },
+      "prompt": "Komplettera titeln: \"Stairway to ___\" (Led Zeppelin)",
+      "answer": "Heaven",
+      "options": [
+        "Heaven",
+        "Hell",
+        "Glory",
+        "Freedom"
+      ],
+      "fact": "Led Zeppelins mest kända låt.",
+      "difficulty": 2
+    },
+    {
+      "id": "70tal-008",
+      "theme": "70tal",
+      "type": "missing_word",
+      "song": {
+        "title": "Knockin' on Heaven's Door",
+        "artist": "Bob Dylan",
+        "year": 1973
+      },
+      "prompt": "Komplettera titeln: \"Knockin' on Heaven's ___\" (Bob Dylan)",
+      "answer": "Door",
+      "options": [
+        "Door",
+        "Gate",
+        "Floor",
+        "Roof"
+      ],
+      "fact": "Skrevs av Bob Dylan till en westernfilm.",
+      "difficulty": 2
+    },
+    {
+      "id": "70tal-009",
+      "theme": "70tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Rocket Man",
+        "artist": "Elton John",
+        "year": 1972
+      },
+      "prompt": "Vem ligger bakom \"Rocket Man\"?",
+      "answer": "Elton John",
+      "options": [
+        "Elton John",
+        "David Bowie",
+        "Rod Stewart",
+        "Billy Joel"
+      ],
+      "fact": "Elton John och Bernie Taupins rymdballad.",
+      "difficulty": 2
+    },
+    {
+      "id": "70tal-010",
+      "theme": "70tal",
+      "type": "listen_guess",
+      "song": {
+        "title": "Sweet Home Alabama",
+        "artist": "Lynyrd Skynyrd",
+        "year": 1974
+      },
+      "prompt": "Lyssna – vilken låt är detta?",
+      "answer": "Sweet Home Alabama",
+      "options": [
+        "Sweet Home Alabama",
+        "Free Bird",
+        "Simple Man",
+        "Tuesday's Gone"
+      ],
+      "fact": "Södernrockens signaturlåt.",
+      "difficulty": 3,
+      "audio": {
+        "provider": "itunes",
+        "query": "Lynyrd Skynyrd Sweet Home Alabama"
+      }
+    }
+  ]
+}

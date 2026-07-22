@@ -1,0 +1,211 @@
+{
+  "id": "90tal",
+  "name": "90-talet",
+  "description": "Internationella hits från 1990-talet.",
+  "questions": [
+    {
+      "id": "90tal-001",
+      "theme": "90tal",
+      "type": "year",
+      "song": {
+        "title": "Smells Like Teen Spirit",
+        "artist": "Nirvana",
+        "year": 1991
+      },
+      "prompt": "Vilket år släpptes Nirvanas \"Smells Like Teen Spirit\"?",
+      "answer": "1991",
+      "options": [
+        "1991",
+        "1989",
+        "1993",
+        "1995"
+      ],
+      "fact": "Låten som förde grungen till mainstream.",
+      "difficulty": 2
+    },
+    {
+      "id": "90tal-002",
+      "theme": "90tal",
+      "type": "year",
+      "song": {
+        "title": "Wonderwall",
+        "artist": "Oasis",
+        "year": 1995
+      },
+      "prompt": "Vilket år släpptes Oasiss \"Wonderwall\"?",
+      "answer": "1995",
+      "options": [
+        "1995",
+        "1993",
+        "1997",
+        "1999"
+      ],
+      "fact": "Från Oasis album '(What's the Story) Morning Glory?'.",
+      "difficulty": 2
+    },
+    {
+      "id": "90tal-003",
+      "theme": "90tal",
+      "type": "year",
+      "song": {
+        "title": "...Baby One More Time",
+        "artist": "Britney Spears",
+        "year": 1998
+      },
+      "prompt": "Vilket år släpptes Britney Spearss \"...Baby One More Time\"?",
+      "answer": "1998",
+      "options": [
+        "1998",
+        "1996",
+        "2000",
+        "2002"
+      ],
+      "fact": "Britney Spears debutsingel och genombrott.",
+      "difficulty": 2
+    },
+    {
+      "id": "90tal-004",
+      "theme": "90tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Nothing Compares 2 U",
+        "artist": "Sinéad O'Connor",
+        "year": 1990
+      },
+      "prompt": "Vem ligger bakom \"Nothing Compares 2 U\"?",
+      "answer": "Sinéad O'Connor",
+      "options": [
+        "Sinéad O'Connor",
+        "Alanis Morissette",
+        "Tori Amos",
+        "Björk"
+      ],
+      "fact": "Skriven av Prince, men hitversionen blev hennes.",
+      "difficulty": 2
+    },
+    {
+      "id": "90tal-005",
+      "theme": "90tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Gangsta's Paradise",
+        "artist": "Coolio",
+        "year": 1995
+      },
+      "prompt": "Vem ligger bakom \"Gangsta's Paradise\"?",
+      "answer": "Coolio",
+      "options": [
+        "Coolio",
+        "Warren G",
+        "Dr. Dre",
+        "Snoop Dogg"
+      ],
+      "fact": "Bygger på Stevie Wonders 'Pastime Paradise'.",
+      "difficulty": 2
+    },
+    {
+      "id": "90tal-006",
+      "theme": "90tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Wannabe",
+        "artist": "Spice Girls",
+        "year": 1996
+      },
+      "prompt": "Vem ligger bakom \"Wannabe\"?",
+      "answer": "Spice Girls",
+      "options": [
+        "Spice Girls",
+        "TLC",
+        "All Saints",
+        "Destiny's Child"
+      ],
+      "fact": "Spice Girls debutsingel om 'girl power'.",
+      "difficulty": 2
+    },
+    {
+      "id": "90tal-007",
+      "theme": "90tal",
+      "type": "which_artist",
+      "song": {
+        "title": "Zombie",
+        "artist": "The Cranberries",
+        "year": 1994
+      },
+      "prompt": "Vem ligger bakom \"Zombie\"?",
+      "answer": "The Cranberries",
+      "options": [
+        "The Cranberries",
+        "No Doubt",
+        "Garbage",
+        "Alanis Morissette"
+      ],
+      "fact": "Dolores O'Riordans protestlåt.",
+      "difficulty": 2
+    },
+    {
+      "id": "90tal-008",
+      "theme": "90tal",
+      "type": "missing_word",
+      "song": {
+        "title": "Losing My Religion",
+        "artist": "R.E.M.",
+        "year": 1991
+      },
+      "prompt": "Komplettera titeln: \"Losing My ___\" (R.E.M.)",
+      "answer": "Religion",
+      "options": [
+        "Religion",
+        "Mind",
+        "Way",
+        "Grip"
+      ],
+      "fact": "R.E.M.:s största hit.",
+      "difficulty": 2
+    },
+    {
+      "id": "90tal-009",
+      "theme": "90tal",
+      "type": "missing_word",
+      "song": {
+        "title": "Enter Sandman",
+        "artist": "Metallica",
+        "year": 1991
+      },
+      "prompt": "Komplettera titeln: \"Enter ___\" (Metallica)",
+      "answer": "Sandman",
+      "options": [
+        "Sandman",
+        "Night",
+        "Darkness",
+        "Silence"
+      ],
+      "fact": "Öppningsspåret på Metallicas 'Black Album'.",
+      "difficulty": 2
+    },
+    {
+      "id": "90tal-010",
+      "theme": "90tal",
+      "type": "listen_guess",
+      "song": {
+        "title": "Wonderwall",
+        "artist": "Oasis",
+        "year": 1995
+      },
+      "prompt": "Lyssna – vilken låt är detta?",
+      "answer": "Wonderwall",
+      "options": [
+        "Wonderwall",
+        "Don't Look Back in Anger",
+        "Champagne Supernova",
+        "Live Forever"
+      ],
+      "fact": "En av 90-talets mest spelade britpop-låtar.",
+      "difficulty": 3,
+      "audio": {
+        "provider": "itunes",
+        "query": "Oasis Wonderwall"
+      }
+    }
+  ]
+}
