@@ -64,6 +64,7 @@ export async function highscoreRoutes(app: FastifyInstance): Promise<void> {
 
     const data = rows.map((r, idx) => ({
       rank: idx + 1,
+      id: r.id,
       team_name: r.teamName,
       players: r.players,
       score: r.score,

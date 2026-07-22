@@ -1,6 +1,18 @@
 {
   "versions": [
     {
+      "version": "v0.7.0",
+      "date": "2026-07-22",
+      "label": "Spelbar app + deploy-config",
+      "changes": [
+        "Backenden serverar en spelbar sida (backend/public/index.html): registrering → slumpad omgång (text + ljud via /api/preview) → spara poäng → topplista. Samma origin, ingen CORS.",
+        "Ny endpoint GET /api/questions (hela banken, normaliserad) + statisk servering via @fastify/static.",
+        "Deploy-config: Dockerfile (API + sida i en container), .dockerignore, render.yaml (web + Postgres, migrering vid deploy), .github/workflows/ci.yml, docs/deploy.md.",
+        "Verifierat i webbläsare: registrering, text- och ljudfrågor, poäng, och sparflöde (payload korrekt; spar/topplista kräver Postgres). Typecheck rent.",
+        "Roadmap: Fas 2 MVP klar (vanilla-sida), Fas 3 config klar och väntar på klick-deploy."
+      ]
+    },
+    {
       "version": "v0.6.0",
       "date": "2026-07-22",
       "label": "Fas 1 — skarp backend",

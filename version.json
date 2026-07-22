@@ -1,12 +1,12 @@
 {
-  "version": "v0.6.0",
+  "version": "v0.7.0",
   "date": "2026-07-22",
-  "label": "Fas 1 — skarp backend",
+  "label": "Spelbar app + deploy-config",
   "changes": [
-    "Backend implementerad: Node + TypeScript + Fastify + Drizzle + zod i backend/.",
-    "Endpoints: POST/GET /api/highscores, GET /api/stats, GET /api/preview (server-side iTunes-uppslag, cache-bar) + /health.",
-    "Enhetligt svarskuvert, zod-validering, fel-/404-hantering; total sätts från config ej klient; statistik härledd i SQL.",
-    "Drizzle-schema + genererad migration (ersätter handskriven SQL). 13 enhetstester gröna, typecheck rent, server bootar och svarar.",
-    "Docs uppdaterade: backend/README.md, roadmap Fas 1 klar, db-schema pekar på Drizzle, CLAUDE.md stack."
+    "Backenden serverar en spelbar sida (backend/public/index.html): registrering → slumpad omgång (text + ljud via /api/preview) → spara poäng → topplista. Samma origin, ingen CORS.",
+    "Ny endpoint GET /api/questions (hela banken, normaliserad) + statisk servering via @fastify/static.",
+    "Deploy-config: Dockerfile (API + sida i en container), .dockerignore, render.yaml (web + Postgres, migrering vid deploy), .github/workflows/ci.yml, docs/deploy.md.",
+    "Verifierat i webbläsare: registrering, text- och ljudfrågor, poäng, och sparflöde (payload korrekt; spar/topplista kräver Postgres). Typecheck rent.",
+    "Roadmap: Fas 2 MVP klar (vanilla-sida), Fas 3 config klar och väntar på klick-deploy."
   ]
 }

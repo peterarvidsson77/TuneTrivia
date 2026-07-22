@@ -1,0 +1,26 @@
+# Render Blueprint — web-service (Docker) + managed Postgres.
+# Skapa via Render → New → Blueprint, peka på detta repo.
+databases:
+  - name: tunetrivia-db
+    databaseName: tunetrivia
+    plan: free
+
+services:
+  - type: web
+    name: tunetrivia
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    plan: free
+    healthCheckPath: /health
+    # Kör migrationer före varje deploy.
+    preDeployCommand: "npm run db:migrate"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tunetrivia-db
+          property: connectionString
+      - key: QUESTION_COUNT
+        value: "50"
+      - key: NODE_ENV
+        value: "production"

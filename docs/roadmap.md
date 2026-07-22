@@ -24,9 +24,14 @@ Node + **TypeScript** + **Fastify** + **Drizzle** + **zod**. Kod i `backend/`.
 
 Se [`../backend/README.md`](../backend/README.md).
 
-## Fas 2 — Frontend (skarp) ⬜
+## Fas 2 — Frontend
 
-React + Vite + TypeScript + Tailwind. Portar kompisens komponenter där det går.
+**MVP klar ✅:** en spelbar vanilla-sida serveras av backenden
+(`backend/public/index.html`) — registrering → slumpad omgång (text + ljud via
+`/api/preview`) → spara poäng → topplista. En delbar URL, samma origin (ingen CORS).
+
+**Kvar ⬜:** riktig **React + Vite + TypeScript + Tailwind**-app (portar kompisens
+komponenter), egna routes för ytorna.
 
 - Ytor: **Quiz** (`/`), **Stats** (`/stats`), **QR** (`/qr`).
 - Spelflöde: registrering → slumpad omgång ur frågebanken → resultat.
@@ -34,12 +39,15 @@ React + Vite + TypeScript + Tailwind. Portar kompisens komponenter där det går
 - Fallback-states: laddning, nätverksfel, tom topplista.
 - Frågebanken importeras från `data/questions/` (byggs in vid bundling).
 
-## Fas 3 — Deploy & CI ⬜
+## Fas 3 — Deploy & CI
 
-- Hosting med Node + Postgres (Fly.io / Render / Hetzner).
-- Miljövariabler för all config (`.env`, mall i `.env.example`).
-- GitHub Actions: lint + typecheck + test + build vid PR; deploy vid merge till `main`.
-- Uppdatera Branch-strategi + Deploy-gotchas i `CLAUDE.md` när valt.
+**Config klar ✅** (väntar på användarens klick-deploy — se [`deploy.md`](deploy.md)):
+- `Dockerfile` (API + spelsida i en container), `.dockerignore`.
+- `render.yaml` — blueprint: web-service + managed Postgres, migrering vid deploy.
+- `.github/workflows/ci.yml` — typecheck + test vid PR/push.
+
+**Kvar ⬜:** användaren skapar Render-konto och kör blueprinten; uppdatera sen
+Branch-strategi + Deploy-gotchas i `CLAUDE.md` med faktisk trigger.
 
 ## Fas 4 — Polish & innehåll ⬜
 

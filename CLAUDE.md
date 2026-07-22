@@ -248,4 +248,4 @@ Fylls i allt eftersom vi skapar det.
 | Frågebank (teman, format, regler) | [`data/questions/README.md`](data/questions/README.md) |
 | DB-schema | [`docs/db-schema.md`](docs/db-schema.md) |
 | API-endpoints | [`docs/api.md`](docs/api.md) |
-| Deploy-guide | `docs/deploy.md` (planeras) |
+| Deploy-guide | [`docs/deploy.md`](docs/deploy.md) |
