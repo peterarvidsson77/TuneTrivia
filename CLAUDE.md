@@ -242,6 +242,7 @@ Fylls i allt eftersom vi skapar det.
 
 | Ämne | Fil |
 |------|-----|
+| Roadmap (fasplan till produktion) | [`docs/roadmap.md`](docs/roadmap.md) |
 | Spel-spec (frågor, faser, entiteter) | [`docs/game-design.md`](docs/game-design.md) |
 | Frågebank (teman, format, regler) | [`data/questions/README.md`](data/questions/README.md) |
 | DB-schema | [`docs/db-schema.md`](docs/db-schema.md) |

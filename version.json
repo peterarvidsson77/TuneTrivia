@@ -1,10 +1,10 @@
 {
-  "version": "v0.5.1",
+  "version": "v0.5.2",
   "date": "2026-07-22",
-  "label": "Testsida för hela banken",
+  "label": "Roadmap / fasplan",
   "changes": [
-    "prototypes/quiz-player.html: testa en slumpad omgång ur hela banken — välj tema (eller alla) och antal frågor (5/10/15/20).",
-    "Hanterar alla frågetyper: textfrågor direkt, ljudfrågor (listen_guess/cover_original) med iTunes-preview och längd-väljare.",
-    "build.py genererar nu båda prototyperna (quiz-player + finskcover-player) från datan. Röktestad i webbläsare (116 frågor, text + ljud)."
+    "docs/roadmap.md: fasplan från scaffold till produktion (Fas 0 klart; Fas 1 backend, 2 frontend, 3 deploy/CI, 4 polish).",
+    "Destillerat ur en tidigare Perplexity-prompt: lägger produktionskvalitetsribba (TS, validering, felhantering, CI) men behåller våra grundade beslut (ingen auth, Vite, frågor i frontend).",
+    "Föreslagen förbättring mot originalet: server-side iTunes-preview-endpoint (cache-bar, ersätter klient-JSONP)."
   ]
 }

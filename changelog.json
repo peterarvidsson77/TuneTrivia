@@ -1,6 +1,16 @@
 {
   "versions": [
     {
+      "version": "v0.5.2",
+      "date": "2026-07-22",
+      "label": "Roadmap / fasplan",
+      "changes": [
+        "docs/roadmap.md: fasplan från scaffold till produktion (Fas 0 klart; Fas 1 backend, 2 frontend, 3 deploy/CI, 4 polish).",
+        "Destillerat ur en tidigare Perplexity-prompt: lägger produktionskvalitetsribba (TS, validering, felhantering, CI) men behåller våra grundade beslut (ingen auth, Vite, frågor i frontend).",
+        "Föreslagen förbättring mot originalet: server-side iTunes-preview-endpoint (cache-bar, ersätter klient-JSONP)."
+      ]
+    },
+    {
       "version": "v0.5.1",
       "date": "2026-07-22",
       "label": "Testsida för hela banken",
