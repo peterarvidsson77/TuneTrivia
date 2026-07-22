@@ -1,10 +1,11 @@
 {
-  "version": "v0.2.0",
+  "version": "v0.2.1",
   "date": "2026-07-22",
-  "label": "Riktning: port från Base44",
+  "label": "DB-schema + API-kontrakt",
   "changes": [
-    "Repot omdefinierat till port av befintlig Base44-app (React) → eget bygge: behåll React-frontend, ersätt Base44 BaaS med Node + Postgres.",
-    "CLAUDE.md rättad: rätt stack (React + Node + Postgres, ingen WebSocket), rätt ytor (Quiz/Stats/QR), rätt spelmodell (self-contained per lag, ej realtid).",
-    "docs/game-design.md tillagd: spec från kompisens Base44-app att porta mot."
+    "docs/db-schema.md: high_scores-tabell (ersätter Base44 HighScore), statistik härleds ur tabellen.",
+    "backend/migrations/001_high_scores.sql: körbar Postgres-migration med constraints + leaderboard-index.",
+    "docs/api.md: REST-kontrakt (POST/GET highscores, GET stats) med enhetligt svarskuvert och server-side validering.",
+    "CLAUDE.md: Djupare referens pekar nu på db-schema.md och api.md."
   ]
 }

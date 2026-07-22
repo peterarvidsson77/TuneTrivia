@@ -1,6 +1,17 @@
 {
   "versions": [
     {
+      "version": "v0.2.1",
+      "date": "2026-07-22",
+      "label": "DB-schema + API-kontrakt",
+      "changes": [
+        "docs/db-schema.md: high_scores-tabell (ersätter Base44 HighScore), statistik härleds ur tabellen.",
+        "backend/migrations/001_high_scores.sql: körbar Postgres-migration med constraints + leaderboard-index.",
+        "docs/api.md: REST-kontrakt (POST/GET highscores, GET stats) med enhetligt svarskuvert och server-side validering.",
+        "CLAUDE.md: Djupare referens pekar nu på db-schema.md och api.md."
+      ]
+    },
+    {
       "version": "v0.2.0",
       "date": "2026-07-22",
       "label": "Riktning: port från Base44",

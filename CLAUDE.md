@@ -237,6 +237,6 @@ Fylls i allt eftersom vi skapar det.
 | Ämne | Fil |
 |------|-----|
 | Spel-spec (frågor, faser, entiteter) | [`docs/game-design.md`](docs/game-design.md) |
-| DB-schema | `docs/db-schema.md` (planeras) |
-| API-endpoints | `docs/api.md` (planeras) |
+| DB-schema | [`docs/db-schema.md`](docs/db-schema.md) |
+| API-endpoints | [`docs/api.md`](docs/api.md) |
 | Deploy-guide | `docs/deploy.md` (planeras) |
