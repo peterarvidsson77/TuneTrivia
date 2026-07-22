@@ -1,6 +1,17 @@
 {
   "versions": [
     {
+      "version": "v0.3.1",
+      "date": "2026-07-22",
+      "label": "Verifierat mot Base44-preview",
+      "changes": [
+        "Granskade kompisens Base44-preview: frågor hårdkodade i JS-bundeln, schema {decade,type,question,options,correct,fact,audio?}, 50 frågor per årtionde.",
+        "Beslut: behåll vårt rikare frågeschema (frontend anpassas vid port); ljud via live iTunes-uppslag (ej hårdkodade URL:er).",
+        "Bekräftat: leaderboard-API (HighScore?sort=-score&limit=50) matchar api.md, ingen auth behövs, words/plats-frågor återger låttext (kopieras ej).",
+        "game-design.md + api.md uppdaterade med verifierade fynd och portbeslut."
+      ]
+    },
+    {
       "version": "v0.3.0",
       "date": "2026-07-22",
       "label": "Temabaserad frågebank + slumpmodell",

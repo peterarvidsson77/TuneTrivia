@@ -107,9 +107,12 @@ Tom databas → nollor / `null`, inte `500`.
 - **`/qr`** — statisk QR mot appens URL, ingen backend.
 - **Auth** — behövs inte; registrering är bara ett lagnamn, ingen inloggning.
 
-## Öppet att bekräfta mot kompisens kod
+## Verifierat mot Base44-preview (2026-07-22)
 
-- Exakt fältnamn Base44-frontend använder (`team_name` vs `teamName` etc.) — matcha
-  det så porten blir ett rent datalager-byte utan att röra komponenterna.
-- Skickar nuvarande frontend med `total`? I så fall: ignorera värdet, sätt från
-  config, men acceptera fältet så inget krånglar.
+- **Leaderboard** i originalet: `GET …/entities/HighScore?sort=-score&limit=50` →
+  motsvarar vår `GET /api/highscores` (sortering `score DESC`, limit 50).
+- **`HighScore`-fälten** matchar vårt schema (`team_name`, `players[]`, `score`,
+  `total`). En spelad omgång visade `total = 46` (banken har 50) — backend sätter
+  `total` från config, så det påverkar inte kontraktet.
+- **Ingen auth behövs** — appen är publik (`User/me` → 401 men fungerar ändå).
+- Vi behåller **vårt** schema/fältnamn; frontend anpassas till det vid porten.

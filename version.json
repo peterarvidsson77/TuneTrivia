@@ -1,12 +1,11 @@
 {
-  "version": "v0.3.0",
+  "version": "v0.3.1",
   "date": "2026-07-22",
-  "label": "Temabaserad frågebank + slumpmodell",
+  "label": "Verifierat mot Base44-preview",
   "changes": [
-    "Ny spelmodell: temabaserad frågebank med slumpad dragning per omgång (ersätter 50 fasta frågor) — inspirerat av användarens spel Melody Pursuit.",
-    "Seed-frågebank batch 1: 5 teman, 48 frågor (80-talet, One-hit wonders, Svenska hits, Film & TV, Melodifestivalen) i data/questions/.",
-    "Frågeformat + typer dokumenterade i data/questions/README.md; rätt svar valideras finnas i options.",
-    "Hård regel tillagd: ingen sångtext i frågebanken (copyright) — 'Saknat ord' görs på titlar.",
-    "game-design.md och CLAUDE.md uppdaterade till slumpad temamodell."
+    "Granskade kompisens Base44-preview: frågor hårdkodade i JS-bundeln, schema {decade,type,question,options,correct,fact,audio?}, 50 frågor per årtionde.",
+    "Beslut: behåll vårt rikare frågeschema (frontend anpassas vid port); ljud via live iTunes-uppslag (ej hårdkodade URL:er).",
+    "Bekräftat: leaderboard-API (HighScore?sort=-score&limit=50) matchar api.md, ingen auth behövs, words/plats-frågor återger låttext (kopieras ej).",
+    "game-design.md + api.md uppdaterade med verifierade fynd och portbeslut."
   ]
 }

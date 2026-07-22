@@ -70,12 +70,36 @@ Frågebankens format och regler: [`../data/questions/README.md`](../data/questio
 ## Teknik (original, Base44)
 
 React + Tailwind + Vite · Base44 BaaS (databas/auth/hosting) · Framer Motion ·
-iTunes Search API · lucide-react.
+lucide-react.
 
-## Öppna frågor att lösa vid porten
+## Verifierat mot preview (2026-07-22)
 
-- Var lagras frågedata (frontend-konstant vs DB)? Base44-versionen verkar ha den i
-  frontend.
-- Sker poängräkningen i klienten? (Troligen ja — casual party-spel.)
-- Behövs auth alls? Registrering är bara ett lagnamn, ingen inloggning syns.
-- Hur genereras "Tips"-förslagen för lagnamn?
+Preview: `preview--savvy-beat-quiz-pro.base44.app`. Frågorna ligger **hårdkodade i
+JS-bundeln** (ingen questions-entitet anropas). Bekräftade fynd:
+
+- **Hans frågeschema:** `{ decade, type, question, options[], correct, fact, audio? }`
+  där `correct` är ett **index** i `options`. 50 frågor, indelade per **årtionde**.
+  Typer: `year` (21), `words` (14), `lyssna` (10), `onehit` (3), `plats` (2).
+- **`words`/`plats` återger låttext** — copyright. Vi kopierar dem inte; vår
+  bank gör "Saknat ord" på **titlar** (se `data/questions/README.md`).
+- **`lyssna` har `audio` = hårdkodad iTunes-preview-URL.** Vi gör istället
+  **live-uppslag**: lagra låt+artist, hämta preview via iTunes Search API vid
+  speltid (URL:er ruttnar annars).
+- **Leaderboard-API:** `GET …/entities/HighScore?sort=-score&limit=50` — matchar
+  vår [`api.md`](api.md). Statistiksidan visade riktig data (total **46** i en
+  spelad omgång trots 50 i banken — dubbelkolla hur många som faktiskt spelas).
+- **Auth:** `User/me` ger 401 men appen funkar publikt → ingen auth behövs.
+
+## Beslut för porten
+
+- **Frågeschema:** vi behåller **vårt rikare schema** (`theme`/`song`/`answer`/
+  `difficulty`, egna typnamn) — inte hans. Hans frågekomponenter **anpassas** till
+  vårt format vid porten (alltså inte en ren data-swap på frågesidan; däremot är
+  leaderboard/stats en ren backend-swap).
+- **Frågedata:** i frontend (som hos honom), inte DB. Se `data/questions/`.
+- **Poängräkning:** i klienten (casual), leaderboard-skrivning valideras server-side.
+
+## Kvar att lösa
+
+- Hur genereras "Tips"-förslagen för lagnamn? (inte kritiskt)
+- Antal frågor per spelad omgång (bankens 50 vs observerade 46) — bekräfta.
