@@ -1,6 +1,16 @@
 {
   "versions": [
     {
+      "version": "v0.2.0",
+      "date": "2026-07-22",
+      "label": "Riktning: port från Base44",
+      "changes": [
+        "Repot omdefinierat till port av befintlig Base44-app (React) → eget bygge: behåll React-frontend, ersätt Base44 BaaS med Node + Postgres.",
+        "CLAUDE.md rättad: rätt stack (React + Node + Postgres, ingen WebSocket), rätt ytor (Quiz/Stats/QR), rätt spelmodell (self-contained per lag, ej realtid).",
+        "docs/game-design.md tillagd: spec från kompisens Base44-app att porta mot."
+      ]
+    },
+    {
       "version": "v0.1.0",
       "date": "2026-07-22",
       "label": "Projektstart",

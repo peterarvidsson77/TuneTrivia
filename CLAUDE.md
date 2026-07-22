@@ -10,11 +10,17 @@ Läs denna fil innan du skriver kod. Djupare referensmaterial finns i `docs/`.
 
 ## Vad är TuneTrivia?
 
-TuneTrivia är ett gruppbaserat musikquiz-spel i realtid: en värd driver quizet på
-storbild och lag svarar från sina egna mobiler. Tänkt för fester, pubkvällar och
-event där flera lag tävlar mot varandra rond för rond.
+TuneTrivia är ett gruppbaserat musikquiz på webben. Ett lag (2–4 spelare)
+registrerar sig, spelar igenom 50 frågor i fast ordning och får poäng + placering
+på en gemensam topplista. Tänkt för fester, pubkvällar och event. Ingen realtid
+eller storbild i nuläget — varje lag kör quizet självständigt på en enhet.
 
 **Syfte/affärsmodell:** A group music quiz game where teams answer music trivia questions
+
+> **Ursprung:** en fungerande Base44-app (React) byggd av en kompis. Vi **portar**
+> den till ett eget bygge — behåll React-frontend, byt ut Base44:s BaaS mot egen
+> Node + Postgres-backend. Riktig källkod väntas via GitHub-koppling. Spec att
+> porta mot: [`docs/game-design.md`](docs/game-design.md).
 
 ---
 
@@ -35,34 +41,40 @@ inget det.
   `{ "success": true, "data": {…} }` / `{ "success": false, "error": "…" }`.
 - **Säkerhetskänsliga lås sker server-side** — lita aldrig på klienten för
   auktorisering, betalning, eller tidslås. Validera i backend.
-- **Varje yta/lager har eget ansvar** — blanda inte publik logik, app-logik och
-  admin. Ytorna är: **Host** (storbild — frågor, timer, leaderboard), **Spelare**
-  (mobil lag-vy — svara på frågor), **Admin** (hantera frågebanker och sessioner).
+- **Varje yta/lager har eget ansvar** — blanda inte spel, publik statistik och
+  backend. Ytorna är: **Quiz** (`/` — registrering → 50 frågor → resultat),
+  **Stats** (`/stats` — publik topplista + statistik), **QR** (`/qr` — utskrivbar
+  kod till quizet). Admin för frågebanker kan tillkomma senare.
 
 **Projektspecifika:**
-- **Servern är auktoritativ för speltillstånd och poäng** — klienten visar bara.
-  Rätt svar, rondlås och poängräkning avgörs server-side, aldrig i browsern.
+- **Leaderboard-skrivningar valideras server-side** — poängräkningen får ske i
+  klienten (casual party-spel, ingen anti-fusk-modell), men backend validerar
+  formatet innan en highscore sparas så topplistan inte skräpas ned.
 
 ---
 
 ## Stack
 
-- **Backend:** Node.js med WebSockets för realtid (rondstart, svar,
-  leaderboard-push till alla klienter samtidigt).
-- **Databas:** PostgreSQL — alltid via prepared statements / parametriserade queries.
-- **Frontend:** en vy per yta (Host, Spelare, Admin). Ramverk beslutas per yta
-  vid behov; börja lätt (vanilla) tills något tvingar fram mer.
+- **Frontend:** React + Tailwind CSS + Vite. Framer Motion (animationer),
+  lucide-react (ikoner). Portas från Base44-appen — behåll komponenterna, byt ut
+  datalagret.
+- **Backend:** Node.js — ersätter Base44 BaaS (databas + hosting). Enhetligt
+  API-svarskuvert. **Ingen WebSocket** (spelet är inte realtid).
+- **Databas:** PostgreSQL — prepared statements. Startentitet: `HighScore`
+  (se [`docs/game-design.md`](docs/game-design.md)).
+- **Externt API:** iTunes Search API för 30-sek låtpreviews (spelas max ~5 sek så
+  låtnamnet inte avslöjas) i "Lyssna & gissa"-frågorna.
 - **Config:** miljövariabler (`.env`), mall i `.env.example`. Inga hårdkodade
   URL:er/nycklar.
-- **Hosting/deploy:** beslutas när första deployen görs (kräver Node-kompatibel
-  host, ej rent statiskt webbhotell). Uppdatera Branch-strategi + Deploy-gotchas
-  när den valts.
+- **Hosting/deploy:** beslutas senare (Node-backend + statisk frontend). Base44
+  skötte detta förut; vi äger det själva efter porten. Uppdatera Branch-strategi +
+  Deploy-gotchas när host valts.
 
 ---
 
 ## Filstruktur
 
-Växer allt eftersom vi skapar det. Nuvarande + planerad baslinje:
+Firmar upp när kompisens kod kommer via GitHub. Planerad baslinje:
 
 ```
 TuneTrivia/
@@ -70,15 +82,12 @@ TuneTrivia/
 ├── README.md
 ├── version.json         ← nuvarande version (ersätts vid varje bump)
 ├── changelog.json       ← versionshistorik (växer uppåt)
-├── package.json         ← Node-projekt, scripts (npm test, npm start)
+├── package.json         ← Node-projekt, scripts
 ├── .env.example         ← config-mall (riktig .env committas aldrig)
 ├── .gitignore
-├── src/                 ← (planeras) server + de tre ytorna
-│   ├── server/          ← WebSocket-server, spel-logik, DB-lager
-│   ├── host/            ← Host-ytan (storbild)
-│   ├── player/          ← Spelar-ytan (mobil)
-│   └── admin/           ← Admin-ytan (frågebanker, sessioner)
-├── docs/                ← djupare referens (DB-schema, API/events, deploy)
+├── frontend/            ← (planeras) React + Vite-app (portas från Base44)
+├── backend/             ← (planeras) Node-API + Postgres-lager (ersätter Base44)
+├── docs/                ← game-design.md, db-schema, api, deploy
 └── tests/               ← testsuite (npm test)
 ```
 
@@ -194,11 +203,14 @@ git checkout -b feature/namn-på-feature
 Växer efterhand. Startpunkter:
 - **Enhetligt API-svarskuvert:** `{ "success": true, "data": {…} }` /
   `{ "success": false, "error": "…" }` (se Hårda regler).
-- **WebSocket-meddelanden:** typade event `{ "type": "...", "payload": {…} }`.
-  Servern är auktoritativ för speltillstånd och poäng.
+- **Routes:** `/` (quiz), `/stats` (publik topplista + statistik), `/qr` (QR-kod).
+- **Frågedata:** 50 frågor i fast ordning — 40 textfrågor (blandade årtionden
+  70-tal→2020-tal) följt av 10 "Lyssna & gissa". Frågetyper: Gissa årtal, Saknat
+  ord, Ort i texten, One hit wonder, Lyssna & gissa. Varje fråga har en kort fakta
+  som visas efter svar. Detaljer i [`docs/game-design.md`](docs/game-design.md).
 - **Config via miljövariabler** (`.env`, mall i `.env.example`) — inga hårdkodade
   URL:er/nycklar.
-- **i18n / språk:** beslutas när UI byggs.
+- **Språk:** appen är på svenska.
 
 ---
 
@@ -224,6 +236,7 @@ Fylls i allt eftersom vi skapar det.
 
 | Ämne | Fil |
 |------|-----|
+| Spel-spec (frågor, faser, entiteter) | [`docs/game-design.md`](docs/game-design.md) |
 | DB-schema | `docs/db-schema.md` (planeras) |
-| API- & WebSocket-events | `docs/api.md` (planeras) |
+| API-endpoints | `docs/api.md` (planeras) |
 | Deploy-guide | `docs/deploy.md` (planeras) |

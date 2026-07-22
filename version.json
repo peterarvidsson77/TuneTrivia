@@ -1,9 +1,10 @@
 {
-  "version": "v0.1.0",
+  "version": "v0.2.0",
   "date": "2026-07-22",
-  "label": "Projektstart",
+  "label": "Riktning: port från Base44",
   "changes": [
-    "Scaffold uppsatt: CLAUDE.md ifylld (Node + WebSockets + Postgres, ytor Host/Spelare/Admin), versionsdisciplin, learning-capture-skill.",
-    "Node-baslinje: package.json, .gitignore, .env.example, docs/-mapp."
+    "Repot omdefinierat till port av befintlig Base44-app (React) → eget bygge: behåll React-frontend, ersätt Base44 BaaS med Node + Postgres.",
+    "CLAUDE.md rättad: rätt stack (React + Node + Postgres, ingen WebSocket), rätt ytor (Quiz/Stats/QR), rätt spelmodell (self-contained per lag, ej realtid).",
+    "docs/game-design.md tillagd: spec från kompisens Base44-app att porta mot."
   ]
 }
